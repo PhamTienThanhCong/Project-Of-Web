@@ -1,0 +1,187 @@
+body{
+    margin: 0;
+}
+
+.container{
+    width: 100%;
+}
+
+.menu{
+    position: absolute;
+    width: 350px;
+    height:420px;
+    margin-left: 40px;
+    border: 2px solid #4CAF50;
+}
+.chose-lever{
+    position: relative;
+    top: 10px;
+    -webkit-box-align:center;
+    -webkit-box-pack:center;
+    display:-webkit-box;
+    /* transform: translateX(-50%); */
+}
+
+.game-bottom-1,.game-bottom-2,.game-bottom-3,.game-bottom-4{
+    position: relative;
+    text-transform: uppercase;
+    padding: 10px;
+    background-color:#4CAF50;
+    display: inline-block;
+    width: 140px;
+    background-color: #4CAF50;
+    border: 0;
+    text-decoration:none;
+    color:black;
+}
+
+.game-bottom-1:hover,.game-bottom-2:hover,.game-bottom-3:hover,.game-bottom-4:hover{
+    background-color: antiquewhite;
+}
+
+.game-bottom-1{
+    width: 120px;
+    top: 50px;
+    left: 20px;
+}
+
+.game-bottom-2{
+    top: 50px;
+    left: 50px;
+}
+
+.game-bottom-3{
+    top: 150px;
+    left: 50px;
+}
+
+.game-bottom-4{
+    top: 150px;
+    left: 20px;
+    width: 120px;
+}
+
+#number-goals,#number-health,#number-goal-max{
+    text-align: center;
+    margin-top: 20px;
+}
+#number-health,#number-goal-max{
+    margin-top: 5px;
+}
+
+.game-menu{
+    position: absolute;
+    width: 420px;
+    height:420px;
+    margin-left: 455px;
+    border: 2px solid blue;
+}
+.mobie-bottom{
+    display: none;
+}
+
+@media (max-width: 750px){
+    .pc{
+        display: none;
+    }
+    .menu{
+        position: relative;
+        display: block;
+        width: 420px;
+        height: 150px;
+        margin: 0 auto;
+    }
+    .game-menu{
+        position: relative;
+        display: block;
+        margin: 0 auto;
+        margin-top: 30px;
+        width: 420px;
+        height: 420px;
+    }
+    #myCanvas{
+        width: 100%;
+        height: width;
+    }
+    .mobie-bottom{
+        margin-top: 20px;
+        display: block;
+        position: relative;
+        left: 0; 
+        right: 0; 
+        margin-left: auto; 
+        margin-right: auto; 
+        width: 420px;
+        height: 157px;
+        background-color:aqua;
+    }
+    #rotateMode{
+        position: relative;
+        margin: 0 auto;
+        top: 10px;
+        margin-top: 15px;
+        border-radius: 50%;
+        width: 125px;
+        height: 125px;
+        background-color: gray;
+        color:white;
+        position:relative;
+       
+      }
+      #left,#right{
+          width: 40px;
+          height: 35px;
+      }
+      #up,#down{
+          width: 35px;
+          height: 40px;
+      }
+      #left{
+          position:absolute;
+        top:50%;
+        left:0px;
+        transform:translateY(-50%);
+      }
+      
+      #right{
+       position:absolute;
+        top:50%;
+        right:0px;
+        transform:translateY(-50%);
+      }
+      
+      #up{
+           position:absolute;
+        top:0px;
+        left:50%;
+        transform:translateX(-50%);
+      }
+      
+      #down{
+          position:absolute;
+        bottom:0px;
+        left:50%;
+        transform:translateX(-50%);
+      }
+    .game-bottom-1{
+        width: 80px;
+        top: -105px;
+        left: 40px;
+    }
+    .game-bottom-2{
+        width: 80px;
+        top: -105px;
+        left: 210px;
+    }
+    .game-bottom-3{
+        width: 80px;
+        top: -35px;
+        left: -130px;
+    }
+    .game-bottom-4{
+        width: 120px;
+        top: -35px;
+        left: 30px;
+    }
+    
+}

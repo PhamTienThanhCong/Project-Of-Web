@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Snake</title>
+    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ 
+</head>
+<body>
+    <!-- header -->
+    <h1 style="text-align:center">Trò Chơi Con Rắn</h1>
+    <!-- body -->
+    <div class="container">
+        <div class="menu">
+            <div class="chose-lever">
+                <label for="lever">lever: </label>
+                    <select name="lever" id="lever">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+            </div>
+            <p id="number-goals">
+                Điểm Của Bạn Là: 
+            </p>
+            <p id="number-health">
+                Máu Của Rắn Là: 
+            </p>
+            <p id="number-goal-max">
+                Điểm Cao Nhất Là:
+            </p>
+    
+            <button class="game-bottom-1 pc">Start: Enter</button>
+            <!-- <div class="game-bottom-2">
+                Stop: space
+            </div> -->
+            <button class="game-bottom-2 pc" onclick="stopSnake()">Stop: space</button>
+            <!-- <div class="game-bottom-4">
+                contact me 
+            </div> -->
+            <a class="game-bottom-4 pc" href="https://www.facebook.com/phamtienthanhcong/">contact me</a>
+            <button class="game-bottom-3 pc" onclick="exitGame()">exit: key_f</button>
+        </div>
+
+        <div class="game-menu">
+            <canvas id="myCanvas" width="420" height="420" style="border:1px solid #c3c3c3;">
+    
+            </canvas>
+        </div>
+        <div class="mobie-bottom">
+            <div class ='circleBase' id='rotateMode'>
+                <button id="left" class="btn btn-default btn-sm" onclick="leftCase()"><span class="glyphicon glyphicon-arrow-left"></span></button>          
+                 <button id="right" class="btn btn-default btn-sm" onclick="rightCase()"><span class="glyphicon glyphicon-arrow-right"></span></button>            
+                 <button id="up" class="btn btn-default btn-sm" onclick="upCase()"><span class="glyphicon glyphicon-arrow-up"></span></button>
+                <button id="down" class="btn btn-default btn-sm" onclick="downCase()"><span class="glyphicon glyphicon-arrow-down"></span></button>
+            </div>
+            <button class="game-bottom-1 start-game" onclick="startGame()">Start</button>
+            <button class="game-bottom-2" onclick="stopSnake()">Stop</button>
+            <button class="game-bottom-3" onclick="exitGame()">exit</button>
+            <a class="game-bottom-4" href="https://www.facebook.com/phamtienthanhcong/">contact me</a>
+        </div>     
+    </div>
+    <img style="display:none" id="scream" src="https://emojigraph.org/media/google/growing-heart_1f497.png" alt="The Scream" width="30" height="30">
+    <img style="display:none" id="headSnake" src="https://art.pixilart.com/bf702463aa6296c.png">
+    <script src="myFunction.js"></script>
+</body>
+</html>
