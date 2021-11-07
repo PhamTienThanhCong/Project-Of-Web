@@ -14,6 +14,13 @@ var widthOfDesktop = style.width //the RGB value
 widthOfDesktop = widthOfDesktop.substring(0, widthOfDesktop.length-2);
 widthOfDesktop = Number(widthOfDesktop)
 
+//sử lý số xấu
+widthOfDesktop = Math.floor(widthOfDesktop/14)*14;
+
+// dặt hàm giá trị mặc định
+canvas.width  = widthOfDesktop;
+canvas.height = widthOfDesktop;
+
 var headOfDesktop = widthOfDesktop/14
 
 let myVar
@@ -38,9 +45,7 @@ var yStop = 0;
 var time = leverChoice();
 var runValue = 0;
 
-// dặt hàm giá trị mặc định
-canvas.width  = widthOfDesktop;
-canvas.height = widthOfDesktop;
+
 
 
 function setvalue(){
