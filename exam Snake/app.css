@@ -71,8 +71,8 @@ body{
 
 .game-menu{
     position: absolute;
-    width: 420px;
-    height:420px;
+    width: 424px;
+    height:424px;
     margin-left: 455px;
     border: 2px solid blue;
 }
