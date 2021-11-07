@@ -185,21 +185,31 @@ function stopSnake(){
 }
 
 // Tạo ra quả ngẫu nhiên
-function checkCreate(){
+function createFruit(){
     xFruit = (Math.floor(Math.random() * 14))*headOfDesktop;
     yFruit = (Math.floor(Math.random() * 14))*headOfDesktop;
 }
-checkCreate()
+createFruit()
 
-
+function CheckCreateFruit(){
+    var i=0;
+    while (i <= sizeOfSnake-1){
+        if (bodyY[i]===yFruit && bodyX[i]===xFruit){
+            createFruit();
+            i = 0;
+        }
+        i++;
+    }    
+}
 // Kiểm tra xem có ăn quả khum
 function checkEat(){
     if (xFruit === x && yFruit === y){
         // tạo mới và thêm điểm khi ăn
-        checkCreate();
+        createFruit();
+        // Kiểm tra điểm xem có bị dính thân ko
+        CheckCreateFruit()
         Diem += 5;
         SucKhoe += 25;
-        console.log(Diem);
         // tăng kích thước dương vật
         sizeOfSnake ++;
     }
@@ -253,13 +263,7 @@ function bodySamsung(){
 
 function changeScreen(){
     // in Ra Màn Hình phần quả
-    // const context = canvas.getContext('2d');
-    // context.beginPath();
-    // context.arc(yFruit+15, xFruit+15, 15, 0, 2 * Math.PI, false);
-    // context.fillStyle = 'rgb(255, 114, 131)';
-    // context.fill();
-    head.drawImage(img,yFruit,xFruit,headOfDesktop,headOfDesktop);
-    
+    head.drawImage(img,yFruit,xFruit,headOfDesktop,headOfDesktop); 
     // in ra màn hình phần thân
     for (var i=0; i<sizeOfSnake-1; i++){
         head.fillStyle = 'rgb(0, 102, 0)';
@@ -268,13 +272,9 @@ function changeScreen(){
     if (keyStop === 1 && (xChange !== 0 || yChange !== 0)){
         head.clearRect(bodyY[sizeOfSnake -1], bodyX[sizeOfSnake -1], headOfDesktop, headOfDesktop); 
     }
-
     // in ra màn hình phần đầu
-    // head.clearRect(y, x, 30, 30);
     x = x + xChange;
     y = y + yChange;
-    // head.fillStyle = 'rgb(92, 132, 3)';
-    // head.fillRect(y, x, 30, 30);
     head.drawImage(imgHead,y,x,headOfDesktop,headOfDesktop);
 }
 
@@ -290,15 +290,7 @@ function runCode() {
     }
 };
 
-bottmStart[0].onclick = function() {
-    if (runValue === 0){
-        runValue = 1;
-        clearInterval(myVar);
-        time = leverChoice();
-        myVar = setInterval(runCode, time);
-    } 
-}
-bottmStartMobie[0].onclick = function() {
+function startOfClick(){
     if (runValue === 0){
         runValue = 1;
         clearInterval(myVar);
@@ -307,13 +299,18 @@ bottmStartMobie[0].onclick = function() {
     } 
 }
 
+bottmStart[0].onclick = function() {
+    startOfClick()
+}
+bottmStartMobie[0].onclick = function() {
+    startOfClick()
+}
+
 // let myVar = setInterval(runCode, time);
 function startGame(){
     document.addEventListener('keydown', function(event) {
-        if (event.key === 'Enter' && runValue===0){
-            clearInterval(myVar);
-            time = leverChoice();
-            myVar = setInterval(runCode, time);
+        if (event.key === 'Enter'){
+            startOfClick();
         }
     })
 }
