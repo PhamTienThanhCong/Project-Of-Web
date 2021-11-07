@@ -1,0 +1,443 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    z-index: 0;
+    font-family: sans-serif;
+    scroll-behavior:smooth;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+.clear{
+    clear: both;
+}
+
+#header{
+    position: fixed;
+    top:0;
+    height: 46px;
+    background-color: black;
+    width: 100%;
+    z-index:1;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+ul{
+    list-style-type: none;
+}
+
+li{
+    text-align: -webkit-match-parent;
+}
+
+#header .nav li a{
+    text-decoration:none;
+    display: inline-block;
+    color: white;
+    text-transform: uppercase;
+    float: left;
+    font-family:sans-serif;
+    font-size: 15px;
+    padding: 14.5px 24px!important;
+    font-weight: 300;
+}
+
+.icon-search{
+    font-size: 16px;
+    color: white;
+    padding: 15px 24px!important;
+    display: inline-block;
+}
+
+#header .nav .subnav li a{
+    min-width: 160px;
+    background-color: white;
+    color: black;
+    text-transform: none;
+    border-radius: 0 0 10px 10px;
+}
+
+
+
+.search{
+    float: right;
+}
+
+.subnav{
+    background-color: white;
+    border-radius: 25px;
+    display: none;
+    position: absolute;
+    top:46px;
+    left: 392px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#header .nav li a:hover{
+    background-color: #ccc;
+    color: black;
+}
+
+.search:hover{
+    background-color: red;
+}
+
+#header .nav li:hover > .subnav{
+    display: block;
+}
+
+/* end header */
+
+.slide{
+    margin-top: 46px;
+    width: 100%;
+    height: 50vw;
+    box-sizing: border-box;
+}
+
+#img1{
+    display: block;
+    position: relative;
+}
+
+#img2,#img3{
+    display: none;
+    position: relative;
+}
+
+.TextCenter,
+.TextContent{
+    color: white;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    font-family:sans-serif;
+}
+
+.TextCenter{
+    font-weight: 400;
+    bottom: 90px;
+    font-size: 24px;
+    
+}
+
+.TextContent{
+    font-weight: bolder;
+    font-size: 15px;
+    line-height: 1.5;
+    bottom: 51px;
+    
+}
+
+/* end slide */
+
+.conten{
+    width: 800px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+
+h2, .text-inline, .text-conten{
+    width: 100%;
+    color: black;
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 15px;
+}
+
+h2{
+    margin-top: 75px;
+    letter-spacing: 4px;
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.text-inline{
+    margin-top: 30px;
+    font-style: italic;
+    color: gray;
+}
+
+.text-conten{
+    margin-top: 30px;
+    display: block;
+    text-align: justify;
+    line-height: 1.5;
+}
+
+.conten-image{
+    margin-top: 30px;
+    width: 100%;
+}
+
+.image-conten{
+    width: 33.33%;
+    display: inline-block;
+    float: left;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.image-conten .img{
+    margin-top: 15px;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.image-conten .img img{
+    border-radius: 6px;
+}
+
+.conten-text-img{
+    width: 100%;
+    text-align: center;
+}
+
+/* end content */
+
+.tour{
+    background-color: black;
+    width: 100%;
+    position: relative;
+}
+
+.tour-conten{
+    margin: 14px auto 0 auto;
+    width: 786px;
+    padding-left: 10px;
+    padding-right: 10px;   
+    max-width: 100%;
+}
+
+.text-tour{
+    padding-top: 85px;
+    font-size: 30px;
+    color: white;
+    font-weight: 400;
+    position: unset;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.tour .text-inline{
+    font-weight: 400;
+    margin-top: 20px;
+    position: unset;
+}
+
+.ticket{
+    margin-top: 35px;
+    width: 100%;
+}
+
+.ticket li{
+    background-color: white;
+    font-family: sans-serif;
+    font-size: 15px;
+    padding: 8px 16px;
+    border-bottom:1px solid #ddd;
+    color: #757575
+}
+
+.ticket li .sold-out{
+    background-color: red;
+    padding: 2px 8px;
+    margin-left: 16px;
+    color: white;
+}
+
+.ticket li .sold-by{
+    float: right;
+    margin-right: 16px;
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 50%;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    background: #000
+}
+
+#place-list{
+    margin: 14px -8px 0 -8px;
+}
+.place{
+    float: left;
+    width: 33.3%;
+    padding: 0 8px;
+    background-clip: content-box;
+    background-color: white;
+    padding-bottom: 70px;
+}
+
+.place-name,.place-time,
+.place-conten,.place-bottom{
+    margin-top: 15px;
+    padding: 0.15px 16px;
+    color: black;
+    font-size: 15px;
+    line-height: 1.5;
+    font-family: sans-serif;
+}
+.place-name{
+    font-weight: bold;
+}
+.place-time{
+    color: rgba(0,0,0,0.6);
+}
+.place-bottom{
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: black;
+    color: white;
+    margin-left: 16px;
+    margin-bottom: 16px;
+    border: none;
+}
+
+/* howver */
+.place-img:hover{
+    opacity: 0.60;  
+}
+.place-bottom:hover,
+.contact-send:hover{
+    background-color: #ccc;
+    color: black;
+}
+.contact-send:active,
+.place-bottom:active{
+    background-color: red;
+}
+/* end place */
+
+.contact{
+    width: 800px;
+    height: 457px;
+    margin: 0 auto;
+    padding: 64px 16px;
+}
+
+.contact-band,
+.contact-fan{
+    width: 100%;
+    color: black;
+    text-align: center;
+}
+
+.contact-band{
+    font-size: 30px;
+    font-weight: 400;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin: 10px 0;
+}
+.contact-fan{
+    margin-top: 30px;
+    font-style: italic;
+    opacity: 0.6;
+}
+
+.contac-ift,
+.contact-form{
+    width: 50%;
+    margin-top: 50px;
+    float: left;
+}
+.contact-icon{
+    width: 30px;
+    display: inline-block;
+}
+.contac-ift li{
+    font-size: 18px;
+    padding-top: 5px;
+}
+
+.contact-form{
+    float: right;
+}
+.form-name,.form-messenger,
+.form-email{
+    padding: 9.5px 10px;
+    width: 184px;
+    font-size: 15px;
+    float: left;
+    border: #ccc 1;
+    border: 1px solid #ccc;
+}
+.form-email{
+    float: right;
+}
+.form-messenger{
+    width: 100%;
+    margin-top: 10px;
+    float: left;
+}
+.contact-send{
+    text-transform: uppercase;
+    border: none;
+    font-size: 15px;
+    float: right;
+    background-color: black;
+    color: white;
+    margin-top: 15px;
+    padding: 10px 15px;
+}
+
+.map{
+    width: 100%;
+}
+
+.info{
+    height: 100px;
+    width: 100%;
+}
+.info-conten{
+    margin-top: 64px;
+    height: 152px;
+}
+.info-icon{
+    text-align: center;
+    font-size: 20px;
+    opacity: 0.65; 
+}
+.info-icon i:hover{
+    opacity: 0.5;
+}
+.info-ps{
+    margin-top: 20px;
+    text-align: center;
+    color: black;
+    opacity: 0.6;
+}
+.info-ps a{
+    color: black;
+}
+
+.register{
+    width: 10%;
+    height: 20%;
+    background-color: white;
+    opacity: 0.5;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+@media(max-width:800px){
+    .conten{
+        width: 100%;
+    }
+    .tour-conten{
+        width: 100%;
+    }
+}
+ 

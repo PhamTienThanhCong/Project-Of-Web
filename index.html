@@ -4,70 +4,149 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exam Snake</title>
-    <link rel="stylesheet" href="app.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
- 
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
-<body>
-    <!-- header -->
-    <h1 style="text-align:center">Trò Chơi Con Rắn</h1>
-    <!-- body -->
-    <div class="container">
-        <div class="menu">
-            <div class="chose-lever">
-                <label for="lever">lever: </label>
-                    <select name="lever" id="lever">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                    </select>
-            </div>
-            <p id="number-goals">
-                Điểm Của Bạn Là: 
-            </p>
-            <p id="number-health">
-                Máu Của Rắn Là: 
-            </p>
-            <p id="number-goal-max">
-                Điểm Cao Nhất Là:
-            </p>
-    
-            <button class="game-bottom-1 pc">Start: Enter</button>
-            <!-- <div class="game-bottom-2">
-                Stop: space
-            </div> -->
-            <button class="game-bottom-2 pc" onclick="stopSnake()">Stop: space</button>
-            <!-- <div class="game-bottom-4">
-                contact me 
-            </div> -->
-            <a class="game-bottom-4 pc" href="https://www.facebook.com/phamtienthanhcong/">contact me</a>
-            <button class="game-bottom-3 pc" onclick="exitGame()">exit: key_f</button>
-        </div>
+<style>
+    .navbar { background-color: #484848; }
+    .navbar .navbar-nav .nav-link { color: #fff; }
+    .navbar .navbar-nav .nav-link:hover { color: #fbc531; }
+    .navbar .navbar-nav .active > .nav-link { color: #fbc531; }
 
-        <div class="game-menu">
-            <canvas id="myCanvas" width="420" height="420" style="border:1px solid #c3c3c3;">
-    
-            </canvas>
-        </div>
-        <div class="mobie-bottom">
-            <div class ='circleBase' id='rotateMode'>
-                <button id="left" class="btn btn-default btn-sm" onclick="leftCase()"><span class="glyphicon glyphicon-arrow-left"></span></button>          
-                 <button id="right" class="btn btn-default btn-sm" onclick="rightCase()"><span class="glyphicon glyphicon-arrow-right"></span></button>            
-                 <button id="up" class="btn btn-default btn-sm" onclick="upCase()"><span class="glyphicon glyphicon-arrow-up"></span></button>
-                <button id="down" class="btn btn-default btn-sm" onclick="downCase()"><span class="glyphicon glyphicon-arrow-down"></span></button>
+    footer a.text-light:hover { color: #fed136!important; text-decoration: none; }
+    footer .cizgi { border-right: 1px solid #535e67; }
+    @media (max-width: 992px) { footer .cizgi { border-right: none; } }
+</style>
+<body>
+    <header>
+        <!--- Navbar --->
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand text-white" href="#"><i class="fa fa-graduation-cap fa-lg mr-2"></i>Web tĩnh</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nvbCollapse" aria-controls="nvbCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="nvbCollapse">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item pl-1">
+                            <a class="nav-link" href="#"><i class="fa fa-home fa-fw mr-1"></i>Trang Chủ</a>
+                        </li>
+                        <li class="nav-item active pl-1">
+                            <a class="nav-link" href="#"><i class="fa fa-th-list fa-fw mr-1"></i>Blog</a>
+                        </li>
+                        <li class="nav-item pl-1">
+                            <a class="nav-link" href="#"><i class="fa fa-info-circle fa-fw mr-1"></i>Thông Tin</a>
+                        </li>
+                        <li class="nav-item pl-1">
+                            <a class="nav-link" href="#"><i class="fa fa-phone fa-fw fa-rotate-180 mr-1"></i>Liên Lạc</a>
+                        </li>
+                        <li class="nav-item pl-1">
+                            <a class="nav-link" href="#"><i class="fa fa-user-plus fa-fw mr-1"></i>Đăng Kí</a>
+                        </li>
+                        <li class="nav-item pl-1">
+                            <a class="nav-link" href="#"><i class="fa fa-sign-in fa-fw mr-1"></i>Đăng Nhập</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <button class="game-bottom-1 start-game" onclick="startGame()">Start</button>
-            <button class="game-bottom-2" onclick="stopSnake()">Stop</button>
-            <button class="game-bottom-3" onclick="exitGame()">exit</button>
-            <a class="game-bottom-4" href="https://www.facebook.com/phamtienthanhcong/">contact me</a>
-        </div>     
-    </div>
-    <img style="display:none" id="scream" src="https://emojigraph.org/media/google/growing-heart_1f497.png" alt="The Scream" width="30" height="30">
-    <img style="display:none" id="headSnake" src="https://art.pixilart.com/bf702463aa6296c.png">
-    <script src="myFunction.js"></script>
+        </nav>
+        <!--# Navbar #-->
+        </header>
+        <!-- body -->
+        <div class="container mt-5">
+            <table class="table">
+                <thead class="thead-dark">
+                  <tr>
+                    <th scope="col">Stt</th>
+                    <th scope="col">Tên sản phẩm</th>
+                    <th scope="col">ngày hoàn thành</th>
+                    <th scope="col">với ai</th>
+                    <th scope="col">địa chỉ</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Web the band 3wschool</td>
+                    <td>12/04/2021</td>
+                    <td>Đinh Văn Thức</td>
+                    <td><a href="./Web_3wSchool/index.html">truy cập</a></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Chúc mừng sinh nhật cô</td>
+                    <td>02/03/2021</td>
+                    <td></td>
+                    <td><a href="./happy_birt_day/HPBD_teacher/index.html">truy cập</a></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Chúc mừng sinh nhật em :3</td>
+                    <td>23/05/2021</td>
+                    <td>Đinh Văn Thức</td>
+                    <td><a href="./happy_birt_day/HPBD_By_Thuc/index.html">truy cập</a></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">4</th>
+                    <td>trò chơi con rắn</td>
+                    <td>05/07/2021</td>
+                    <td></td>
+                    <td><a href="./examSnake/index.html">truy cập</a></td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    <!--- Footer --->
+        <footer>
+            <div class="jumbotron jumbotron-fluid bg-secondary p-4 mt-5 mb-0">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 cizgi">
+                            <div class="card bg-secondary border-0">
+                                <div class="card-body text-light text-center">
+                                    <h5 class="card-title text-white display-4" style="font-size:30px">Bản Quyền</h5>
+                                <p class="d-inline lead">Mọi quyền được bảo lưu © 2020<br>
+                                <a href="#" class="text-light d-block lead">Blog</a>
+                                </p>
+        
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 cizgi">
+                            <div class="card bg-secondary border-0">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title text-white display-4" style="font-size:30px">liên lạc</h5>
+                                    <a class="text-light d-block lead" style="margin-left: -20px" href="#"><i class="fa fa-phone mr-2"></i>0396396332</a>
+                                    <a class="text-light d-block lead" href="#"><i class="fa fa-envelope mr-2"></i>cong.pttc@gmail.com</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
+                            <div class="card bg-secondary border-0">
+                                <div class="card-body text-center">
+                                <h5 class="card-title text-white display-4" style="font-size:30px">Sosyal Medya</h5>
+                        
+                                        <a class="text-light" href="https://www.facebook.com/phamtienthanhcong"><i class="fa fa-facebook-square fa-fw fa-2x"></i>facebook</a>
+                                    
+                                        <a class="text-light" href="https://www.tiktok.com/@becong2002"><i class="fa fa-twitter-square fa-fw fa-2x"></i>tiktok</a>
+                                    
+                                        <a class="text-light" href="#"><i class="fa fa-instagram fa-fw fa-2x"></i></a>
+                                    
+                                        <a class="text-light" href="#"><i class="fa fa-linkedin fa-fw fa-2x"></i></a>
+                                    
+                                </div>
+                            </div>
+                        </div>	
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--# Footer #-->
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
 </body>
 </html>
