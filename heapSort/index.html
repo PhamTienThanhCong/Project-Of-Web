@@ -3,20 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" type="text/css" href="/css/domarrow.css" />
+  <link rel="stylesheet" href="/css/app.css">
   <script type="text/javascript" src="/function/domarrow.js"></script>
-  <style>
-    .TreeStyle {
-      position: absolute;
-      padding: 15px;
-      border-radius: 50%;
-      text-align: center;
-      font-size: 20px;
-      background-color: green;
-    }
-  </style>
 </head>
 
 <body>
+  
+  <label class="lableInputValue" for="inputValue">Nhập mảng</label>
+  <input id="inputValue"></input>
+  <br>
+  <button class="btn"onclick=ramdomValue()>ramdom</button>
+  <button class="btn"onclick=getValueFromInput()>sét giá trị</button>
+  <button class="btn"onclick=CreateTree()>Xắp xếp</button>
+
   
   <connection id="cong150225" from="#tree47550" to="#tree225150" color="#aaaaaa" fromX="0.5" fromY="0.5" tail
     onlyVisible></connection>
@@ -81,6 +80,8 @@
 
 
 </body>
+<script type="text/javascript" src="function/function.js"></script>
+<script type="text/javascript" src="function/input.js"></script>
 <script type="text/javascript" src="function/show.js"></script>
 
 </html>
