@@ -7,7 +7,7 @@ function getValueFromInput() {
     for (var i = 0; i < valueInputSort.length; i++) {
         valueInputSort[i] = parseInt(valueInputSort[i])
     }
-    CreateTree(valueInputSort.length)
+    console.log(valueInputSort)
 }
 
 function ramdomValue(){
@@ -21,9 +21,9 @@ function ramdomValue(){
         }
         a.push(teamp)
     }
-    inputValue.value = a;
     valueInputSort = a;
-    CreateTree(valueInputSort.length)
+    inputValue.value = a;
+    console.log(valueInputSort)
 }
 
 
