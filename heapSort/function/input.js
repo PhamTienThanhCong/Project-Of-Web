@@ -1,8 +1,8 @@
 var valueInputSort = []
 const pointTrees = [];
-const widthScreen = 1000;
+const widthScreen = 1200;
 const widthTree = 50;
-var topTree = 50;
+var topTree = 100;
 var arrowTree = []
 var statusTrees = []
 var showTree = []
@@ -19,7 +19,7 @@ function getValueFromInput() {
     }
     valueInputSort = a;
     statusTrees = statusTree;
-    showNode(valueInputSort)
+    showNode(valueInputSort,statusTrees)
 }
 
 function ramdomValue(){
@@ -38,7 +38,7 @@ function ramdomValue(){
     statusTrees = statusTree
     valueInputSort = a;
     inputValue.value = a;
-    showNode(valueInputSort)
+    showNode(valueInputSort,statusTrees)
 }
 
 for (var i = 1; i <= 16; i = i * 2) {

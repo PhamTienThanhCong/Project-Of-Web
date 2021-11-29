@@ -77,5 +77,4 @@ function heapSort(){
         statusTrees[i]='3'
         heapify(valueInputSort, i, 0);
     }
-    testShow()
 }
