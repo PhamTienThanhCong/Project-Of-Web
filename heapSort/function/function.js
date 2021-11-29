@@ -1,20 +1,111 @@
-const pointTrees = [];
-const widthScreen = 1000;
-const widthTree = 50;
-var topTree = 50;
-var arrowTree = []
+var c = document.getElementById("root");
+var ctx = c.getContext("2d");
 
-for (var i = 1; i <= 16; i = i * 2) {
-    var valuePoint = widthScreen / (i * 2) - widthTree / 2;
-    for (var j = 1; j <= i; j++) {
-        var pointTree = {
-            top: topTree,
-            left: valuePoint,
-            idTree: "tree" + Math.round(valuePoint) + topTree,
-            idArrowTree: "cong" + topTree + Math.round(valuePoint),
+function showNode(valueInputSort){
+    ctx.clearRect(0, 0, widthScreen, 500);
+    for (var i = 0;i<valueInputSort.length;i++){
+        ctx.beginPath();
+        ctx.fillStyle = ''
+        ctx.arc(pointTrees[i].left+25, pointTrees[i].top, 25, 0, 2 * Math.PI);
+        if (statusTrees[i]==='1'){
+            ctx.fillStyle = "red";
+            ctx.fill();
+        }else if (statusTrees[i] === '2'){
+            ctx.fillStyle = "yellow";
+            ctx.fill();
         }
-        pointTrees.push(pointTree);
-        valuePoint = valuePoint + widthScreen / i;
+        ctx.stroke();
+        if(i>0){
+            ctx.moveTo(pointTrees[pointTrees[i].conect].left+25, pointTrees[pointTrees[i].conect].top+25);
+            ctx.lineTo(pointTrees[i].left+25, pointTrees[i].top-25);
+            ctx.stroke();
+        }
+        ctx.font = "25px Times New Roman";
+        var reSize = 18
+        var text = valueInputSort[i]
+        if (text>9){
+            reSize = 18/2+2
+        }
+        if (text>99){
+            reSize = 18/3
+        }
+        ctx.fillStyle = "black";
+        ctx.fillText(text, pointTrees[i].left+reSize, pointTrees[i].top+9);   
     }
-    topTree = topTree + 100
+   
+}
+
+function copyArray(a){
+    var c = []
+    for (var i=0; i<a.length; i++){
+        c[i]=a[i]
+    }
+    return c;
+}
+
+function convetArrayToString(a){
+    var ArrayString = "";
+    for (var i=0; i<a.length; i++){
+        ArrayString = ArrayString + a[i]
+        if(i<a.length-1){
+            ArrayString = ArrayString + ","
+        }
+    }
+    return ArrayString;
+}
+
+function testShow(){
+    var i = 0;
+    var run = setInterval(function(){
+        var a1 = (showTree[i].value).split(',')
+        var a2 = (showTree[i].status).split(',')
+        showNode2(a1,a2)
+        i++;
+        if(i===showTree.length){
+            clearInterval(run)
+        }
+    },500)
+}
+
+function showNode2(valueInputSort,statusTrees){
+    ctx.clearRect(0, 0, widthScreen, 500);
+    for (var i = 0;i<valueInputSort.length;i++){
+        if(statusTrees[i] !== '3'){
+            ctx.beginPath();
+            ctx.fillStyle = ''
+            ctx.arc(pointTrees[i].left+25, pointTrees[i].top, 25, 0, 2 * Math.PI);
+            if (statusTrees[i]==='1'){
+                ctx.fillStyle = "red";
+                ctx.fill();
+            }else if (statusTrees[i] === '2'){
+                ctx.fillStyle = "yellow";
+                ctx.fill();
+            }
+            ctx.stroke();
+            if(i>0){
+                ctx.moveTo(pointTrees[pointTrees[i].conect].left+25, pointTrees[pointTrees[i].conect].top+25);
+                ctx.lineTo(pointTrees[i].left+25, pointTrees[i].top-25);
+                ctx.stroke();
+            }
+            ctx.font = "25px Times New Roman";
+            var reSize = 18
+            var text = parseInt(valueInputSort[i])
+            if (text>9){
+                reSize = 18/2+2
+            }
+            if (text>99){
+                reSize = 18/3
+            }
+            ctx.fillStyle = "black";
+            ctx.fillText(text, pointTrees[i].left+reSize, pointTrees[i].top+9);   
+        }
+        
+    }
+   
+}
+
+function xapXep(){
+    getValueFromInput()
+    heapSort()
+    testShow()
 }

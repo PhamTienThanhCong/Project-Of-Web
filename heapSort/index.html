@@ -10,15 +10,20 @@
   <label class="lableInputValue" for="inputValue">Nhập mảng</label>
   <input id="inputValue"></input>
   <br>
-  <button class="btn"onclick=ramdomValue()>ramdom</button>
+  <button id="check" class="btn"onclick=ramdomValue()>ramdom</button>
   <button class="btn"onclick=getValueFromInput()>sét giá trị</button>
-  <button class="btn"onclick=CreateTree()>Xắp xếp</button>
+  <button class="btn"onclick=xapXep()>Xắp xếp</button>
 
+  <div>
+    <canvas id="root" width="1000" height="500"></canvas>
+  </div>
 
 
 
 </body>
-<script type="text/javascript" src="function/function.js"></script>
 <script type="text/javascript" src="function/input.js"></script>
+<script type="text/javascript" src="function/heapsort.js"></script>
+<script type="text/javascript" src="function/function.js"></script>
+
 
 </html>

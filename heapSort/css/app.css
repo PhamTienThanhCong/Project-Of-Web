@@ -1,7 +1,8 @@
 #inputValue{
     width: 750px;
     height: 30px;
-    font-size: 16px;
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .lableInputValue{
@@ -20,6 +21,8 @@
     background-color: #ccc;
 }
 
-.test{
-    background-color: red;
+#root{
+    margin-top: 10px;
+    margin-left: 20px;
+    border: 1px solid rgb(156, 151, 151);
 }
