@@ -6,6 +6,7 @@ var topTree = 100;
 var arrowTree = []
 var statusTrees = []
 var showTree = []
+var lengthTree=0
 
 function getValueFromInput() {
     var inputValue = document.getElementById('inputValue');
@@ -19,7 +20,8 @@ function getValueFromInput() {
     }
     valueInputSort = a;
     statusTrees = statusTree;
-    showNode(valueInputSort,statusTrees)
+    lengthTree = valueInputSort.length
+    showNode(valueInputSort,statusTrees,valueInputSort.length)
 }
 
 function ramdomValue(){
@@ -38,7 +40,8 @@ function ramdomValue(){
     statusTrees = statusTree
     valueInputSort = a;
     inputValue.value = a;
-    showNode(valueInputSort,statusTrees)
+    lengthTree = valueInputSort.length
+    showNode(valueInputSort,statusTrees,valueInputSort.length)
 }
 
 for (var i = 1; i <= 16; i = i * 2) {

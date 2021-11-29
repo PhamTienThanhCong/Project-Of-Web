@@ -21,6 +21,11 @@
     background-color: #ccc;
 }
 
+.btn-group{
+    display: inline-block;
+    font-size: 18px;
+}
+
 #root{
     margin-top: 10px;
     margin-left: 20px;

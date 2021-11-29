@@ -9,10 +9,17 @@
   
   <label class="lableInputValue" for="inputValue">Nhập mảng</label>
   <input id="inputValue"></input>
-  <br>
-  <button id="check" class="btn"onclick=ramdomValue()>ramdom</button>
-  <button class="btn"onclick=getValueFromInput()>sét giá trị</button>
-  <button class="btn"onclick=xapXep()>Xắp xếp</button>
+  <button id="check" class="btn" onclick=ramdomValue()>ramdom</button>
+  <button class="btn" onclick=getValueFromInput()>sét giá trị</button>
+  <button class="btn" onclick=resetValue()>reset chương trình</button>
+  <br> 
+  <div class="btn-group">Lựa chọn thao tác:</div>
+  <button style="margin-left: 10px;" class="btn"onclick=xapXep()>Xắp Xếp Tăng</button>
+  <button class="btn"onclick=xapXepDown()>Xắp xếp Giảm</button>
+  <button class="btn"onclick=vunDongTang()>Vun Đống Tăng</button>
+  <button class="btn"onclick=vunDongGiam()>Vun Đống Giảm</button>
+  <div style="margin-left: 30px;" class="btn-group">Giải thích: </div>
+  <div class="btn-group"></div>
 
   <div>
     <canvas id="root" width="1200" height="550"></canvas>
@@ -23,7 +30,9 @@
 </body>
 <script type="text/javascript" src="function/input.js"></script>
 <script type="text/javascript" src="function/heapsort.js"></script>
+<script type="text/javascript" src="function/heapsortdown.js"></script>
 <script type="text/javascript" src="function/function.js"></script>
+<script type="text/javascript" src="function/graphic.js"></script>
 
 
 </html>
