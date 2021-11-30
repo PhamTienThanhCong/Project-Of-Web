@@ -1,7 +1,3 @@
-var c = document.getElementById("root");
-var ctx = c.getContext("2d");
-var run
-
 function copyArray(a){
     var c = []
     for (var i=0; i<a.length; i++){
@@ -22,17 +18,18 @@ function convetArrayToString(a){
 }
 
 function testShow(){
-    var i = 0;
+    
     run = setInterval(function(){
-        const a1 = (showTree[i].value).split(',')
-        const a2 = (showTree[i].status).split(',')
-        showNode(a1,a2,showTree[i].length)
-        i++;
-        if(i===showTree.length){
+        const a1 = (showTree[i_Loop].value).split(',')
+        const a2 = (showTree[i_Loop].status).split(',')
+        valueTextComment.innerHTML =  showTree[i_Loop].comment
+        showNode(a1,a2,showTree[i_Loop].length)
+        i_Loop++;
+        if(i_Loop===showTree.length){
             console.log("close")
             clearInterval(run)
         }
-    },300)
+    },500)
 }
 
 function xapXep(){
@@ -51,11 +48,13 @@ function vunDongTang(){
     resetValue()
     buildHeap()
     testShow()
+    inputValue.value = convetArrayToString(valueInputSort)
 }
 function vunDongGiam(){
     resetValue()
     buildHeapDown()
     testShow()
+    inputValue.value = convetArrayToString(valueInputSort)
 }
 
 function resetValue(){
@@ -65,4 +64,5 @@ function resetValue(){
     }
     getValueFromInput()
     showTree=[]
+    i_Loop = 0
 }

@@ -5,11 +5,12 @@ function heapify(valueInputSort, N, i){
 	var arrayStatus = copyArray(statusTrees)
     
     // graphic
-    arrayStatus[i]=1;
+    arrayStatus[i]=2;
     showTree.push({
         status: convetArrayToString(arrayStatus),
         value: convetArrayToString(arrayValue),
-        length:lengthTree
+        length:lengthTree,
+        comment: TextComment
     })
     // graphic
 
@@ -24,7 +25,8 @@ function heapify(valueInputSort, N, i){
         showTree.push({
             status: convetArrayToString(arrayStatus),
             value: convetArrayToString(arrayValue),
-            length:lengthTree
+            length:lengthTree,
+            comment: TextComment
         })
         // graphic
     }
@@ -43,7 +45,8 @@ function heapify(valueInputSort, N, i){
         showTree.push({
             status: convetArrayToString(arrayStatus),
             value: convetArrayToString(arrayValue),
-            length:lengthTree
+            length:lengthTree,
+            comment: TextComment
         })
         // graphic
     }
@@ -61,7 +64,8 @@ function heapify(valueInputSort, N, i){
         showTree.push({
             status: convetArrayToString(arrayStatus),
             value: convetArrayToString(arrayValue),
-            length:lengthTree
+            length:lengthTree,
+            comment: TextComment
         })
         // graphic
 
@@ -70,18 +74,21 @@ function heapify(valueInputSort, N, i){
 }
 		     
 function buildHeap(){
+    TextComment = "Vun đống, tìm giá trị Lớn nhất để đặt lên đầu"
     let m = Math.floor(valueInputSort.length / 2 - 1);
     for(let i = m; i >= 0; i--){
         heapify(valueInputSort, valueInputSort.length, i);
     }
-        
+    
+    TextComment = "Vun đống Thành Công, Đỉnh Đống = "+ valueInputSort[0]
     // graphic
     arrayValue = copyArray(valueInputSort)
     arrayStatus = copyArray(statusTrees)
     showTree.push({
         status: convetArrayToString(arrayStatus),
         value: convetArrayToString(arrayValue),
-        length: lengthTree
+        length: lengthTree,
+        comment: TextComment
     })
     // graphic
 }
@@ -90,6 +97,7 @@ function heapSort(){
     buildHeap();
 		     
     for(let i = valueInputSort.length - 1; i >= 0; i--)    {
+        TextComment = "Đổi Chỗ "+valueInputSort[0]+" và "+ valueInputSort[i]+". Đỉnh Đống xuống cuối đống"
         let t = valueInputSort[0];
         valueInputSort[0] = valueInputSort[i];
         valueInputSort[i] = t;  
@@ -101,17 +109,20 @@ function heapSort(){
         showTree.push({
             status: convetArrayToString(arrayStatus),
             value: convetArrayToString(arrayValue),
-            length: lengthTree
-        })
-        showTree.push({
-            status: convetArrayToString(arrayStatus),
-            value: convetArrayToString(arrayValue),
-            length: lengthTree
+            length: lengthTree,
+            comment: TextComment
         })
         statusTrees[0]='0'
         // graphic   
         statusTrees[i]='3' 
         lengthTree--; 
+        TextComment = "Vun lại đống, sau khi Đổi Đỉnh"
         heapify(valueInputSort, i, 0);
     }
+    showTree.push({
+        status: convetArrayToString(arrayStatus),
+        value: convetArrayToString(arrayValue),
+        length: lengthTree,
+        comment: "Xắp Xếp Thành Công"
+    })
 }

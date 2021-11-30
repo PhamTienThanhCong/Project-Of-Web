@@ -1,15 +1,22 @@
 var valueInputSort = []
 const pointTrees = [];
-const widthScreen = 1200;
+const widthScreen = 1270;
 const widthTree = 50;
 var topTree = 100;
 var arrowTree = []
 var statusTrees = []
 var showTree = []
 var lengthTree=0
+var i_Loop = 0;
+var run
+var c = document.getElementById("root");
+var ctx = c.getContext("2d");
+var inputValue = document.getElementById('inputValue');
+const valueTextComment = document.getElementById("TextComment")
+var TextComment = ""
 
 function getValueFromInput() {
-    var inputValue = document.getElementById('inputValue');
+    valueTextComment.innerHTML = "Nhận Giá trị từ input";
     const valueInput = inputValue.value;
     var statusTree = [];
     var a = [];
@@ -24,8 +31,8 @@ function getValueFromInput() {
     showNode(valueInputSort,statusTrees,valueInputSort.length)
 }
 
-function ramdomValue(){
-    var inputValue = document.getElementById('inputValue')
+function ramdomValue(){   
+    valueTextComment.innerHTML = "Nhận Giá trị ngẫu nhiên từ input";
     var a = [];
     var statusTree = []
     var teamp = 0;
