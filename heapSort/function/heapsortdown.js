@@ -119,10 +119,13 @@ function heapSortDown() {
         TextComment = "Vun lại đống, sau khi Đổi Đỉnh"
         heapifyDown(valueInputSort, i, 0);
     }
+    // graphic   
+    statusTrees[0]='3'
     showTree.push({
-        status: convetArrayToString(arrayStatus),
+        status: convetArrayToString(statusTrees),
         value: convetArrayToString(arrayValue),
         length: lengthTree,
         comment: "Xắp Xếp Thành Công"
     })
+    // graphic   
 }

@@ -39,13 +39,13 @@ function showNode(valueInputSort,statusTrees,length){
         }
         ctx.fillStyle = "black";
         ctx.fillText(text, pointTrees[i].left+reSize, pointTrees[i].top+9); 
+        
         if (i>=15){
-            ctx.fillText(i+1, pointTrees[i].left+9, pointTrees[i].top+45);    
+            ctx.fillText(i+1, pointTrees[i].left+9, pointTrees[i].top+50);    
         } else {
-            ctx.fillText(i+1, pointTrees[i].left-25, pointTrees[i].top);    
+            ctx.fillText(i+1, pointTrees[i].left+55, pointTrees[i].top+10);    
         }        
     }
-
 
     for (var i = 0;i<valueInputSort.length;i++){
         // show phần tiêu đề
