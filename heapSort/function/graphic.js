@@ -154,3 +154,14 @@ function showChillCommentToDesktop(i){
         document.getElementById(idnode).appendChild(nodechills)
     }
 }
+
+function deleteCommentShow(){
+    var myobj = document.getElementById("comment");
+    myobj.remove();
+    var myobj = document.createElement("div");
+    var myojbChill = document.createElement("h2");
+    myojbChill.innerHTML = "Comment và giải thích"
+    myobj.appendChild(myojbChill);
+    myobj.id="comment"
+    document.body.appendChild(myobj);
+}

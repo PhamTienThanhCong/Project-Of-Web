@@ -67,6 +67,7 @@ function resetValue(){
         run = undefined
     }
     getValueFromInput()
+    deleteCommentShow()
     showTree=[]
     commentShow = []
     i_Loop = 0

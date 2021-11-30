@@ -74,6 +74,11 @@ function heapifyDown(valueInputSort, N, i) {
 }
 
 function buildHeapDown() {
+    commentShow.push({
+        comment: "Xắp xếp giảm với Dãy đã cho là: ",
+        array: convetArrayToString(valueInputSort),
+        status: convetArrayToString(statusTrees),
+    })
     TextComment = "Vun đống, tìm giá trị nhỏ nhất để đặt lên đầu"
     let m = Math.floor(valueInputSort.length / 2 - 1);
     for (let i = m; i >= 0; i--) {
@@ -100,11 +105,6 @@ function buildHeapDown() {
 }
 
 function heapSortDown() {
-    commentShow.push({
-        comment: "Xắp xếp giảm với Dãy đã cho là: ",
-        array: convetArrayToString(valueInputSort),
-        status: convetArrayToString(statusTrees),
-    })
 
     buildHeapDown();
 

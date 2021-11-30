@@ -74,6 +74,12 @@ function heapify(valueInputSort, N, i){
 }
 		     
 function buildHeap(){
+    commentShow.push({
+        comment: "Xắp xếp tăng với Dãy đã cho là: ",
+        array: convetArrayToString(valueInputSort),
+        status: convetArrayToString(statusTrees),
+    })
+
     TextComment = "Vun đống, tìm giá trị Lớn nhất để đặt lên đầu"
     let m = Math.floor(valueInputSort.length / 2 - 1);
     for(let i = m; i >= 0; i--){
@@ -90,7 +96,7 @@ function buildHeap(){
         length: lengthTree,
         comment: TextComment
     })
-    
+
     commentShow.push({
         comment: "vun đống với giá trị đỉnh đống là "+valueInputSort[0]+": ",
         array: convetArrayToString(valueInputSort),
@@ -101,11 +107,6 @@ function buildHeap(){
 }
 		     
 function heapSort(){
-    commentShow.push({
-        comment: "Xắp xếp tăng với Dãy đã cho là: ",
-        array: convetArrayToString(valueInputSort),
-        status: convetArrayToString(statusTrees),
-    })
 
     buildHeap();
     
