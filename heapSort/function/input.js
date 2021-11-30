@@ -1,6 +1,6 @@
 var valueInputSort = []
 const pointTrees = [];
-const widthScreen = 1270;
+const widthScreen = 1200;
 const widthTree = 50;
 var topTree = 100;
 var arrowTree = []
@@ -15,6 +15,9 @@ var inputValue = document.getElementById('inputValue');
 const valueTextComment = document.getElementById("TextComment")
 var TextComment = ""
 var commentShow = []
+var rangeInput = document.getElementById('range')
+var rangeFaster = document.getElementById('range-faster')
+var fasterValue = 1900 - rangeFaster.value
 
 function getValueFromInput() {
     valueTextComment.innerHTML = "Nhận Giá trị từ input";
@@ -50,24 +53,6 @@ function ramdomValue(){
     inputValue.value = a;
     lengthTree = valueInputSort.length
     showNode(valueInputSort,statusTrees,valueInputSort.length)
-}
-
-for (var i = 1; i <= 16; i = i * 2) {
-    var valuePoint = widthScreen / (i * 2) - widthTree / 2;
-    for (var j = 1; j <= i; j++) {
-        var fromConect = 0
-        if (pointTrees.length > 0){
-            fromConect = Math.round(pointTrees.length/2)-1
-        }
-        var pointTree = {
-            top: topTree,
-            left: valuePoint,
-            conect: fromConect
-        }
-        pointTrees.push(pointTree);
-        valuePoint = valuePoint + widthScreen / i;
-    }
-    topTree = topTree + 100
 }
 
 

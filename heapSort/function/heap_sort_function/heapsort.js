@@ -153,6 +153,7 @@ function heapSort(){
     }
     // graphic   
     statusTrees[0]='3'
+    showTree.pop()
     showTree.push({
         status: convetArrayToString(statusTrees),
         value: convetArrayToString(arrayValue),
@@ -160,6 +161,7 @@ function heapSort(){
         comment: "Xắp Xếp Thành Công"
     })
 
+    commentShow.pop()
     commentShow.push({
         comment: "Xắp xếp đống thành công",
         array: convetArrayToString(valueInputSort),

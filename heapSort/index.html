@@ -22,29 +22,28 @@
   <div style="margin-left: 30px;" class="btn-group">Giải thích: </div>
   <div class="btn-group" id="TextComment"></div>
 
-  <div>
-    <canvas id="root" width="1270" height="650"></canvas>
+  <div class="input-range-center">
+    <canvas id="root" width="1200" height="550"></canvas>
   </div>
 
+  <div class="input-range-center">
+    <input type="range" id="range" name="volume" min="0" max="1000">
+  </div>
+
+  <div class="input-range-center">
+    <label for="volume" class="lable-range-faster">Tốc Độ </label>
+    <input type="range" id="range-faster" name="volume"
+           min="100" max="1800">
+  </div>
+
+  <div class="input-range-center">
+    <div class="button-center">
+      <button id="stop-start-range">stop</button>
+    </div>
+  </div>
+  
   <div id="comment">
     <h2>Comment và giải thích</h2>
-    <!-- <div class="node-cha">
-      <div class="nodes-comment">- vun đống này </div>
-      <div class="nodes-comment-count">-Lượt 1:</div>
-      <div class="nodes">3</div>
-      <div class="nodes">23</div>
-      <div class="nodes">12</div>
-      <div class="nodes">43</div>
-      <div class="nodes">67</div>
-    </div>
-    <div class="node-cha">
-      <div class="nodes-comment-count">-Lượt 1:</div>
-      <div class="nodes">3</div>
-      <div class="nodes">23</div>
-      <div class="nodes">12</div>
-      <div class="nodes">43</div>
-      <div class="nodes">67</div>
-    </div> -->
   </div>
 
 </body>

@@ -17,9 +17,9 @@ function convetArrayToString(a){
     return ArrayString;
 }
 
-function testShow(){
-    
+function runShow(){
     run = setInterval(function(){
+        rangeInput.value = i_Loop
         const a1 = (showTree[i_Loop].value).split(',')
         const a2 = (showTree[i_Loop].status).split(',')
         valueTextComment.innerHTML =  showTree[i_Loop].comment
@@ -29,7 +29,28 @@ function testShow(){
             console.log("close")
             clearInterval(run)
         }
-    },500)
+    },fasterValue)
+}
+
+function testShow(){
+    rangeInput.max = showTree.length;
+    runShow()
+}
+
+function SetRange(){
+    clearInterval(run)
+    i_Loop = rangeInput.value-1
+    runShow()
+}
+
+rangeFaster.onchange = function(){
+    clearInterval(run)
+    fasterValue = 1900 - rangeFaster.value
+    runShow()
+}
+
+rangeInput.onchange = function(){
+    SetRange()
 }
 
 function xapXep(){
@@ -68,6 +89,8 @@ function resetValue(){
     }
     getValueFromInput()
     deleteCommentShow()
+    rangeInput.value = 0
+    rangeInput.max = 1
     showTree=[]
     commentShow = []
     i_Loop = 0
