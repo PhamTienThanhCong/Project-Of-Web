@@ -90,18 +90,33 @@ function buildHeap(){
         length: lengthTree,
         comment: TextComment
     })
+    
+    commentShow.push({
+        comment: "vun đống với giá trị đỉnh đống là "+valueInputSort[0]+": ",
+        array: convetArrayToString(valueInputSort),
+        status: convetArrayToString(statusTrees),
+    })
+
     // graphic
 }
 		     
 function heapSort(){
+    commentShow.push({
+        comment: "Xắp xếp tăng với Dãy đã cho là: ",
+        array: convetArrayToString(valueInputSort),
+        status: convetArrayToString(statusTrees),
+    })
+
     buildHeap();
-		     
+    
+    
     for(let i = valueInputSort.length - 1; i >= 0; i--)    {
         TextComment = "Đổi Chỗ "+valueInputSort[0]+" và "+ valueInputSort[i]+". Đỉnh Đống xuống cuối đống"
         let t = valueInputSort[0];
         valueInputSort[0] = valueInputSort[i];
         valueInputSort[i] = t;  
         // graphic
+
         statusTrees[lengthTree-1]='3'
         statusTrees[0]='1'
         arrayValue = copyArray(valueInputSort)
@@ -112,11 +127,28 @@ function heapSort(){
             length: lengthTree,
             comment: TextComment
         })
+        showTree.push({
+            status: convetArrayToString(arrayStatus),
+            value: convetArrayToString(arrayValue),
+            length: lengthTree,
+            comment: TextComment
+        })
+
+        commentShow.push({
+            comment: "Đổi chỗ đỉnh đống là: "+t+" xuống đáy đống ",
+            array: convetArrayToString(valueInputSort),
+            status: convetArrayToString(statusTrees),
+        })
         // graphic   
         statusTrees[i]='3' 
         lengthTree--; 
         TextComment = "Vun lại đống, sau khi Đổi Đỉnh"
         heapify(valueInputSort, i, 0);
+        commentShow.push({
+            comment: "Vun lại đống, và giá trị đống mới là: "+valueInputSort[0],
+            array: convetArrayToString(valueInputSort),
+            status: convetArrayToString(statusTrees),
+        })
     }
     // graphic   
     statusTrees[0]='3'
@@ -125,6 +157,12 @@ function heapSort(){
         value: convetArrayToString(arrayValue),
         length: lengthTree,
         comment: "Xắp Xếp Thành Công"
+    })
+
+    commentShow.push({
+        comment: "Xắp xếp đống thành công",
+        array: convetArrayToString(valueInputSort),
+        status: convetArrayToString(statusTrees),
     })
     // graphic   
 }

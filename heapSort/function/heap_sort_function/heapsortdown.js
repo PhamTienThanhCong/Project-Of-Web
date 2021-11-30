@@ -90,10 +90,22 @@ function buildHeapDown() {
         length: lengthTree,
         comment: TextComment
     })
+
+    commentShow.push({
+        comment: "vun đống với giá trị đỉnh đống là "+valueInputSort[0]+": ",
+        array: convetArrayToString(valueInputSort),
+        status: convetArrayToString(statusTrees),
+    })
     // graphic
 }
 
 function heapSortDown() {
+    commentShow.push({
+        comment: "Xắp xếp giảm với Dãy đã cho là: ",
+        array: convetArrayToString(valueInputSort),
+        status: convetArrayToString(statusTrees),
+    })
+
     buildHeapDown();
 
     for (let i = valueInputSort.length - 1; i >= 0; i--) {
@@ -112,12 +124,28 @@ function heapSortDown() {
             length: lengthTree,
             comment: TextComment
         })
+        showTree.push({
+            status: convetArrayToString(arrayStatus),
+            value: convetArrayToString(arrayValue),
+            length: lengthTree,
+            comment: TextComment
+        })
+        commentShow.push({
+            comment: "Đổi chỗ đỉnh đống là: "+t+" xuống đáy đống ",
+            array: convetArrayToString(valueInputSort),
+            status: convetArrayToString(statusTrees),
+        })
         statusTrees[0]='0'
         // graphic
         statusTrees[i] = '3'
         lengthTree--;
         TextComment = "Vun lại đống, sau khi Đổi Đỉnh"
         heapifyDown(valueInputSort, i, 0);
+        commentShow.push({
+            comment: "Vun lại đống, và giá trị đống mới là: "+valueInputSort[0],
+            array: convetArrayToString(valueInputSort),
+            status: convetArrayToString(statusTrees),
+        })
     }
     // graphic   
     statusTrees[0]='3'
@@ -126,6 +154,12 @@ function heapSortDown() {
         value: convetArrayToString(arrayValue),
         length: lengthTree,
         comment: "Xắp Xếp Thành Công"
+    })
+    commentShow.pop()
+    commentShow.push({
+        comment: "Xắp xếp đống thành công",
+        array: convetArrayToString(valueInputSort),
+        status: convetArrayToString(statusTrees),
     })
     // graphic   
 }

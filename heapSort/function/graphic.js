@@ -108,5 +108,49 @@ function showNode(valueInputSort,statusTrees,length){
     ctx.font = "24px Times New Roman";
     ctx.fillStyle = "black";
     ctx.fillText('Giá trị Thay thế nốt cha',970,625);     
+}
 
+// var commentShow = document.getElementById('comment');
+
+// var show = document.createElement('div');
+// show.innerHTML = 'hello'
+// show.className = 'node-cha'
+// document.getElementById('comment').appendChild(show);
+
+function showCommentToDesktop(){
+    for(var i = 0; i<commentShow.length; i++){
+        var idnode = "node"+i+"";
+        var show = document.createElement('div');
+        var showChill1 = document.createElement('div');
+        var showChill2 = document.createElement('div');
+        show.className = "node-cha";
+        show.id = idnode;
+        showChill1.className = "nodes-comment"
+        showChill2.className = "nodes-comment-count"
+        showChill1.innerHTML = "* Lượt "+i+": "+commentShow[i].comment
+        showChill2.innerHTML = "- Array => "
+        show.appendChild(showChill1)
+        show.appendChild(showChill2)
+        
+        
+        document.getElementById('comment').appendChild(show);
+        showChillCommentToDesktop(i)
+    }
+}
+
+function showChillCommentToDesktop(i){
+    var a=commentShow[i].array;
+    var aStatus = commentShow[i].status
+    var aChills = a.split(',')
+    var aStatusChill = aStatus.split(',')
+    var idnode = "node"+i+"";
+    for (var i = 0; i<aChills.length; i++){
+        var nodechills = document.createElement('div');
+        nodechills.className = "nodes"
+        if (aStatusChill[i] === '3'){
+            nodechills.style.backgroundColor = "#ffff00";
+        }
+        nodechills.innerHTML = aChills[i]
+        document.getElementById(idnode).appendChild(nodechills)
+    }
 }

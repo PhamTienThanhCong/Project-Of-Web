@@ -35,24 +35,28 @@ function testShow(){
 function xapXep(){
     resetValue()
     heapSort()
+    showCommentToDesktop()
     testShow() 
 }
 
 function xapXepDown(){
     resetValue()
     heapSortDown()
+    showCommentToDesktop()
     testShow()
 }
 
 function vunDongTang(){
     resetValue()
     buildHeap()
+    showCommentToDesktop()
     testShow()
     inputValue.value = convetArrayToString(valueInputSort)
 }
 function vunDongGiam(){
     resetValue()
     buildHeapDown()
+    showCommentToDesktop()
     testShow()
     inputValue.value = convetArrayToString(valueInputSort)
 }
@@ -64,5 +68,6 @@ function resetValue(){
     }
     getValueFromInput()
     showTree=[]
+    commentShow = []
     i_Loop = 0
 }

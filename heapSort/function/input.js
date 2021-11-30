@@ -14,6 +14,7 @@ var ctx = c.getContext("2d");
 var inputValue = document.getElementById('inputValue');
 const valueTextComment = document.getElementById("TextComment")
 var TextComment = ""
+var commentShow = []
 
 function getValueFromInput() {
     valueTextComment.innerHTML = "Nhận Giá trị từ input";
