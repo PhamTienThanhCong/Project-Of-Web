@@ -190,5 +190,6 @@ function deleteCommentShow(){
     myojbChill.innerHTML = "Comment và giải thích"
     myobj.appendChild(myojbChill);
     myobj.id="comment"
-    document.body.appendChild(myobj);
+    document.getElementById("comment-father").appendChild(myobj);
 }
+

@@ -3,66 +3,122 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="public/style/app.css">
+  <link rel="stylesheet" href="public/style/footer.css">
   <link rel="shortcut icon" href="public/images/phenikaa-icon.png">
   <title>Heap Sort</title>
-  <link rel="stylesheet" href="/Project-Of-Web/heapSort/css/app.css">
 </head>
 
 <body>
+  <!-- //header -->
   <div id="header">
     <div class="text-header">Mô Phỏng Giải Thuật Heap Sort</div>
   </div>
+  <!-- header -->
+
+  <!-- các chức năng của chương trình -->
   <div class="main-function-1">
     <div class="main-function-input-1">
-      <label class="lableInputValue" for="inputValue">- Nhập mảng</label>
-      <input id="inputValue"></input>
+      <label class="mobie-responsive lableInputValue" for="inputValue">- Nhập mảng</label>
+      <input id="inputValue" placeholder="Nhập dãy số bất kì. Các số cách nhau bởi dấu ',' "></input>
       <button class="button-39 botton-create" role="button" onclick=getValueFromInput()>sét giá trị</button>
       <button id="check" class="button-39 botton-create" role="button" onclick=ramdomValue()>ramdom</button>
     </div>
   </div>
   <div class="main-function-2">
     <div class="main-function-input-2">
-      <div class="btn-group">- Lựa chọn thao tác:</div>
+      <div class="mobie-responsive btn-group">- Lựa chọn thao tác:</div>
       <button style="margin-left: 40px;" class="button-39 botton-heapsort" role="button" onclick=xapXep()>Xắp Xếp Tăng</button>
       <button style="margin-left: 20px;" class="button-39 botton-heapsort" role="button" onclick=xapXepDown()>Xắp xếp Giảm</button>
       <button style="margin-left: 20px;" class="button-39 botton-heapsort" role="button" onclick=vunDongTang()>Vun Đống Tăng</button>
       <button style="margin-left: 20px;" class="button-39 botton-heapsort" role="button" onclick=vunDongGiam()>Vun Đống Giảm</button>
-      <button style="margin-left: 120px;" class="button-39 reset" role="button" onclick=resetValue()>reset chương trình</button>
-      
+      <button style="margin-left: 120px;" class="button-39 reset" role="button" onclick=resetAll()>reset chương trình</button>     
     </div>
   </div>
   <div style="margin-bottom: -20px;" class="main-function-2">
     <div class="main-function-input-2">
-      <div class="btn-group">- Giải thích: </div>
+      <div class="mobie-responsive btn-group">- Giải thích: </div>
       <div class="btn-group" id="TextComment"></div>
     </div>
   </div>
+<!-- các chức năng của chương trình -->
 
+  <!-- Phần show các biến chạy -->
   <div class="input-range-center">
     <canvas id="root" width="1200" height="550"></canvas>
   </div>
+  <!-- Phần show các biến chạy -->
 
+  <!-- tăng giảm nhanh châm của chương trình -->
   <div class="input-range-center">
     <input type="range" id="range" name="volume" min="0" max="1000">
   </div>
-  <!-- <div class="botton-player"></div> -->
-    <div class="botton-player-center">
-      <div class="input-range-center">
-        <label for="volume" class="lable-range-faster">- Tốc Độ </label>
-        <input type="range" id="range-faster" name="volume"min="100" max="1800">
-      </div> 
-    </div>
   
+  <div class="botton-player-center">
+    <div class="input-range-center">
+      <label for="volume" class="mobie-responsive-2 lable-range-faster">- Tốc Độ </label>
+      <input type="range" id="range-faster" name="volume"min="100" max="1800">
+    </div> 
+  </div>
+
   <div class="input-range-center">
     <div class="button-center">
       <button onclick=stopShow() id="stop-start-range">
         <img id="button-image" src="public/images/stop-button.png" width="100%" height="100%"/>
       </button>
     </div>
-  </div>    
-  <div id="comment">
-    <h2>Comment và giải thích</h2>
   </div>
+  <!-- tăng giảm nhanh châm của chương trình -->
+
+  <!-- comment các kết quả chạy -->
+  <div id="comment-father">
+    <div id="comment">
+      <h2>Comment và giải thích</h2>
+    </div>
+  </div>   
+  <!-- comment các kết quả chạy -->
+
+  <!-- Phần chân trang. trên mạng -->
+    
+  <footer>
+    <div class="container">
+        <!--Bắt Đầu Nội Dung Giới Thiệu-->
+        <div class="noi-dung about">
+            <h2>Ghi Chú</h2>
+            <p>
+              - Sinh Viên: Phạm Tiến Thành Công, Lớp CNTT4, khóa K14, Trường Đại Học Phenikaa <br>
+              - Học phần: Cấu trúc dữ liệu và thuật toán_1.1(13.14FS).1_LT <br>
+              - Bài tập lớn thuộc mục 8: Giải thuật sắp xếp Heapsort  <br>
+              - Chương trình được trình bày và xây dựng bằng Web <br><br>
+              THANK YOU
+            </p>
+        </div>
+        <!--Kết Thúc Nội Dung Giới Thiệu-->
+        <!--Bắt Đầu Nội Dung Đường Dẫn-->
+        <div class="noi-dung links">
+            <h2>Về Tôi</h2>
+            <ul>
+                <li><a href="https://github.com/phamtienthanhcong">Github</a></li>
+                <li><a href="https://www.facebook.com/phamtienthanhcong">Facebook</a></li>
+                <li><a href="https://www.facebook.com/daihocphenikaa">Trường Đại Học</a></li>
+                <li><a >Email: cong.pttc@gmail.com</a></li>
+            </ul>
+        </div>
+        <!--Kết Thúc Nội Dung Đường Dẫn-->
+        <!--Bắt Đâu Nội Dung Liên Hệ-->
+        <div class="noi-dung noi-dung links">
+            <h2>Nguồn học tập và thiết kế</h2>
+            <ul class="info">
+              <li><a href="https://completejavascript.com/array-sorting-van-de-muon-thuo/#s%E1%BA%AFp-x%E1%BA%BFp-vun-%C4%91%E1%BB%91ng---heap-sort">Nguồn về giải thuật</a></li>
+              <li><a href="https://www.w3schools.com/">Nguồn xây dựng trang web</a></li>
+              <li><a href="https://codepen.io/haycuoilennao19/pen/eYdpJWV">Nguồn footer (Chân trang)</a></li>
+              <li><a href="https://fullstack.edu.vn/">Nguồn tự học web</a></li>
+            </ul>
+        </div>
+        <!--Kết Thúc Nội Dung Liên Hệ-->
+    </div>
+</footer>
+
+
 </body>
 <script type="text/javascript" src="function/input.js"></script>
 <script type="text/javascript" src="function/heap_sort_function/heapsort.js"></script>

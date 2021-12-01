@@ -6,17 +6,18 @@
 
 #header{
     margin: 0;
-    background-color: #66b3ff;
+    background-color: #404040;
     height: 50px;
     width: 100%;
     float: left;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
 }
 
 .text-header{
     text-align: center;
     margin-top: 10px;
     font-size: 28px;
+    color: white;
 }
 
 .main-function-1,.main-function-2{
@@ -41,8 +42,6 @@
     margin-left: auto;
     margin-right: auto;
 }
-
-
 
 /* CSS */
 .button-39 {
@@ -301,6 +300,12 @@
     body{
         width: 1200px;
     }
+    .mobie-responsive{
+        margin-left: 70px;
+    }
+    .mobie-responsive-2{
+        margin-left: 20px;
+    }
   }
 
 .botton-player-center{
@@ -311,9 +316,19 @@
 #comment{
     width: 1200px;
     margin: auto;
-    margin-top: 20px;
+    margin-top: 40px;
+    border: 1px solid #999999;
 }
 
 h2{
     margin-bottom: 20px;
 }
+
+#footer{
+    margin-top: 50px;
+    height:100px;
+    width: 100%;
+    background-color:#ebebe0;
+    border: 1px solid #999;
+}
+

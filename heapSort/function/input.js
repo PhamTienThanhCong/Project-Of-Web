@@ -21,19 +21,26 @@ var fasterValue = 1900 - rangeFaster.value
 var doRun = 1
 
 function getValueFromInput() {
-    valueTextComment.innerHTML = "Nhận Giá trị từ input";
     const valueInput = inputValue.value;
-    var statusTree = [];
-    var a = [];
-    valueInputSort = valueInput.split(',');
-    for (var i = 0; i < valueInputSort.length; i++) {
-        a[i] = parseInt(valueInputSort[i]);
-        statusTree.push('0');
+    if (valueInput){
+        valueTextComment.innerHTML = "Nhận Giá trị từ input";
+        var statusTree = [];
+        var a = [];
+        valueInputSort = valueInput.split(',');
+        for (var i = 0; i < valueInputSort.length; i++) {
+            a[i] = parseInt(valueInputSort[i]);
+            statusTree.push('0');
+        }
+        valueInputSort = a;
+        statusTrees = statusTree;
+        lengthTree = valueInputSort.length
+        showNode(valueInputSort,statusTrees,valueInputSort.length)
     }
-    valueInputSort = a;
-    statusTrees = statusTree;
-    lengthTree = valueInputSort.length
-    showNode(valueInputSort,statusTrees,valueInputSort.length)
+    else{
+        valueTextComment.innerHTML = "Bạn Phải điền giá trị vào input";
+        alert("Bạn Phải điền giá trị vào input")
+    }
+    
 }
 
 function ramdomValue(){   

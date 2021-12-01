@@ -73,44 +73,67 @@ rangeInput.onchange = function(){
 }
 
 function xapXep(){
-    resetValue()
-    heapSort()
-    showCommentToDesktop()
-    testShow() 
+    getValueFromInput()
+    if(valueInputSort.length){
+        resetValue()
+        heapSort()
+        showCommentToDesktop()
+        testShow() 
+    }
 }
 
 function xapXepDown(){
-    resetValue()
-    heapSortDown()
-    showCommentToDesktop()
-    testShow()
+    getValueFromInput()
+    if(valueInputSort.length){
+        resetValue()
+        heapSortDown()
+        showCommentToDesktop()
+        testShow()
+    }
 }
 
 function vunDongTang(){
-    resetValue()
-    buildHeap()
-    showCommentToDesktop()
-    testShow()
-    inputValue.value = convetArrayToString(valueInputSort)
+    getValueFromInput()
+    if(valueInputSort.length){
+        resetValue()
+        buildHeap()
+        showCommentToDesktop()
+        testShow()
+        inputValue.value = convetArrayToString(valueInputSort)
+    }
 }
 function vunDongGiam(){
-    resetValue()
-    buildHeapDown()
-    showCommentToDesktop()
-    testShow()
-    inputValue.value = convetArrayToString(valueInputSort)
+    getValueFromInput()
+    if(valueInputSort.length){
+        resetValue()
+        buildHeapDown()
+        showCommentToDesktop()
+        testShow()
+        inputValue.value = convetArrayToString(valueInputSort)
+    }
 }
 
 function resetValue(){
-    if (run){
-        clearInterval(run)
-        run = undefined
-    }
     getValueFromInput()
-    deleteCommentShow()
-    rangeInput.value = 0
-    rangeInput.max = 1
-    showTree=[]
-    commentShow = []
-    i_Loop = 0
+    if(valueInputSort.length){
+        if (run){
+            clearInterval(run)
+            run = undefined
+        }
+        deleteCommentShow()
+        rangeInput.value = 0
+        rangeInput.max = 1
+        showTree=[]
+        commentShow = []
+        i_Loop = 0
+    }
+}
+
+function resetAll(){
+    getValueFromInput()
+    resetValue()
+    valueInputSort=[]
+    inputValue.value=""
+    ctx.clearRect(0, 0, widthScreen, 500);
+    document.getElementById("button-image").src ="public/images/stop-button.png"
 }
