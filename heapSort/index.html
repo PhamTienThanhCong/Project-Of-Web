@@ -2,25 +2,41 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="/css/app.css">
+  <link rel="stylesheet" href="public/style/app.css">
+  <link rel="shortcut icon" href="public/images/phenikaa-icon.png">
+  <title>Heap Sort</title>
   <link rel="stylesheet" href="/Project-Of-Web/heapSort/css/app.css">
 </head>
 
 <body>
-  
-  <label class="lableInputValue" for="inputValue">Nhập mảng</label>
-  <input id="inputValue"></input>
-  <button id="check" class="btn" onclick=ramdomValue()>ramdom</button>
-  <button class="btn" onclick=getValueFromInput()>sét giá trị</button>
-  <button class="btn" onclick=resetValue()>reset chương trình</button>
-  <br> 
-  <div class="btn-group">Lựa chọn thao tác:</div>
-  <button style="margin-left: 10px;" class="btn"onclick=xapXep()>Xắp Xếp Tăng</button>
-  <button class="btn"onclick=xapXepDown()>Xắp xếp Giảm</button>
-  <button class="btn"onclick=vunDongTang()>Vun Đống Tăng</button>
-  <button class="btn"onclick=vunDongGiam()>Vun Đống Giảm</button>
-  <div style="margin-left: 30px;" class="btn-group">Giải thích: </div>
-  <div class="btn-group" id="TextComment"></div>
+  <div id="header">
+    <div class="text-header">Mô Phỏng Giải Thuật Heap Sort</div>
+  </div>
+  <div class="main-function-1">
+    <div class="main-function-input-1">
+      <label class="lableInputValue" for="inputValue">- Nhập mảng</label>
+      <input id="inputValue"></input>
+      <button class="button-39 botton-create" role="button" onclick=getValueFromInput()>sét giá trị</button>
+      <button id="check" class="button-39 botton-create" role="button" onclick=ramdomValue()>ramdom</button>
+    </div>
+  </div>
+  <div class="main-function-2">
+    <div class="main-function-input-2">
+      <div class="btn-group">- Lựa chọn thao tác:</div>
+      <button style="margin-left: 40px;" class="button-39 botton-heapsort" role="button" onclick=xapXep()>Xắp Xếp Tăng</button>
+      <button style="margin-left: 20px;" class="button-39 botton-heapsort" role="button" onclick=xapXepDown()>Xắp xếp Giảm</button>
+      <button style="margin-left: 20px;" class="button-39 botton-heapsort" role="button" onclick=vunDongTang()>Vun Đống Tăng</button>
+      <button style="margin-left: 20px;" class="button-39 botton-heapsort" role="button" onclick=vunDongGiam()>Vun Đống Giảm</button>
+      <button style="margin-left: 120px;" class="button-39 reset" role="button" onclick=resetValue()>reset chương trình</button>
+      
+    </div>
+  </div>
+  <div style="margin-bottom: -20px;" class="main-function-2">
+    <div class="main-function-input-2">
+      <div class="btn-group">- Giải thích: </div>
+      <div class="btn-group" id="TextComment"></div>
+    </div>
+  </div>
 
   <div class="input-range-center">
     <canvas id="root" width="1200" height="550"></canvas>
@@ -29,23 +45,24 @@
   <div class="input-range-center">
     <input type="range" id="range" name="volume" min="0" max="1000">
   </div>
-
-  <div class="input-range-center">
-    <label for="volume" class="lable-range-faster">Tốc Độ </label>
-    <input type="range" id="range-faster" name="volume"
-           min="100" max="1800">
-  </div>
-
+  <!-- <div class="botton-player"></div> -->
+    <div class="botton-player-center">
+      <div class="input-range-center">
+        <label for="volume" class="lable-range-faster">- Tốc Độ </label>
+        <input type="range" id="range-faster" name="volume"min="100" max="1800">
+      </div> 
+    </div>
+  
   <div class="input-range-center">
     <div class="button-center">
-      <button id="stop-start-range">stop</button>
+      <button onclick=stopShow() id="stop-start-range">
+        <img id="button-image" src="public/images/stop-button.png" width="100%" height="100%"/>
+      </button>
     </div>
-  </div>
-  
+  </div>    
   <div id="comment">
     <h2>Comment và giải thích</h2>
   </div>
-
 </body>
 <script type="text/javascript" src="function/input.js"></script>
 <script type="text/javascript" src="function/heap_sort_function/heapsort.js"></script>

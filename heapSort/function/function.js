@@ -18,7 +18,9 @@ function convetArrayToString(a){
 }
 
 function runShow(){
+    document.getElementById("button-image").src = "public/images/play-buttton.png"
     run = setInterval(function(){
+        doRun=true
         rangeInput.value = i_Loop
         const a1 = (showTree[i_Loop].value).split(',')
         const a2 = (showTree[i_Loop].status).split(',')
@@ -32,21 +34,38 @@ function runShow(){
     },fasterValue)
 }
 
+function stopShow(){
+    if (showTree.length){
+        if (doRun){
+            document.getElementById("button-image").src ="public/images/play.png"
+            clearInterval(run)
+            doRun=false
+        } 
+        else{
+            doRun=true
+            SetRange()
+        }
+    }
+}
+
 function testShow(){
     rangeInput.max = showTree.length;
     runShow()
 }
 
 function SetRange(){
-    clearInterval(run)
-    i_Loop = rangeInput.value-1
-    runShow()
+    if (showTree.length){
+        if(doRun){
+            clearInterval(run)
+            i_Loop = rangeInput.value-1
+            fasterValue = 1900 - rangeFaster.value
+            runShow()
+        }
+    }
 }
 
 rangeFaster.onchange = function(){
-    clearInterval(run)
-    fasterValue = 1900 - rangeFaster.value
-    runShow()
+    SetRange()
 }
 
 rangeInput.onchange = function(){

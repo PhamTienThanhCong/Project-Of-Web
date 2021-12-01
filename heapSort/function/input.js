@@ -18,6 +18,7 @@ var commentShow = []
 var rangeInput = document.getElementById('range')
 var rangeFaster = document.getElementById('range-faster')
 var fasterValue = 1900 - rangeFaster.value
+var doRun = 1
 
 function getValueFromInput() {
     valueTextComment.innerHTML = "Nhận Giá trị từ input";
