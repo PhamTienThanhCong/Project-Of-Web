@@ -297,16 +297,9 @@
     display: none;
 }
 
-@media only screen and (max-width: 1100px) {
-    #range-faster{
-        margin-top: 10px;
-    }
-    .lable-range-faster{
-        margin-top: 10px;
-    }
-    #stop-start-range{
-        margin-top: -60px;
-        margin-left: 670px;
+@media only screen and (max-width: 1200px) {
+    body{
+        width: 1200px;
     }
   }
 
