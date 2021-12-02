@@ -1,0 +1,17 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#header{
+    margin-top: 0px;
+    width: 100%;
+    height: 50px;
+    background-color: cornflowerblue;
+}
+
+.title-header{
+    padding: 10px;
+    text-align: center;
+}
