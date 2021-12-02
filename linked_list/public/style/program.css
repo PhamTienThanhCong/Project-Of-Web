@@ -1,0 +1,34 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    transition: all 1s ease-in-out;
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#main-show{
+    width: 1000px;
+    height: 400px;
+    background-color: #ccc;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.chill-show{
+    width: 35px;
+    height: 35px;
+    position: relative;
+    background-color: rebeccapurple;
+    top: 40px;
+    left: 20px;
+}
+
+.chill-arrow{
+    width: 35px;
+    height: 35px;
+    position: relative;
+    background-color:salmon;
+    top: 40px;
+    left: 400px
+}

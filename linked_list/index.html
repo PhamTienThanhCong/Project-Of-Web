@@ -3,12 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <title>Linked list</title>
-    <link rel="stylesheet" href="./public/style/app.css">
     <link rel="shortcut icon" href="./public/images/phenikaa-icon.png">
+    <link rel="stylesheet" href="./public/style/app.css">
+    <link rel="stylesheet" href="./public/style/program.css">
+    <link rel="stylesheet" href="./public/style/connection.css">
 </head>
 <body>
     <header id="header">
         <h2 class="title-header">Mô phỏng các thao tác trên danh sách liên kết</h2>
     </header>
+
+    <div id="content">
+        <div class="menu-program">
+            <!-- Phần inset -->
+            <label class="label-insert" for="value-insert">Value</label>
+            <input id="value-insert" type="text"/>
+            <label class="label-insert" for="index-insert">Index</label>
+            <input id="index-insert" type="text"/>
+            <button class="btn">Insert</button>
+            <!-- Phần inset -->
+            <br>
+
+            <!-- Phần tìm kiếm và xóa -->
+            <label class="label-insert" for="value-insert">Index</label>
+            <input id="index-find-delete" type="text"/>
+            <button class="btn">Find </button>
+            <button class="btn">delete</button>
+            <button class="btn-print">Print List</button>
+            <br>
+            <!-- Phần tìm kiếm và xóa -->
+
+            <!-- Phần nút in ra tất cả hay là print list -->
+            
+            <!-- Phần nút in ra tất cả hay là print list -->
+        </div>
+        <!-- <connection from="#test1" to="#test2" color="red" fromX="0.5" fromY="0.7" tail></connection> -->
+        <div id="main-show">
+            <div class="chill-show"  id="test1">1</div>
+            <div class="chill-arrow" id="test2">2</div>
+        </div>
+    </div>  
+    <footer>
+
+    </footer>
+    <script type="text/javascript" src="./function/out/domarrow.js"></script>
 </body>
 </html>

@@ -2,7 +2,12 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    transition: all 1s ease-in-out;
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
 }
+
+/* Start Phần đầu trang */
 
 #header{
     margin-top: 0px;
@@ -14,4 +19,60 @@
 .title-header{
     padding: 10px;
     text-align: center;
+    font-size: 24px;
 }
+
+/* stop phần đầu trang */
+
+
+/* Phần thân trang */
+
+#content{
+    width: 100%;
+}
+
+/* css các phần in pút */
+
+.menu-program{
+    width: 800px;
+    height: 150px;
+    /* background-color: aqua; */
+    margin: auto;
+}
+
+#value-insert,#index-insert,#index-find-delete{
+    margin-top: 20px;
+    height: 30px;
+    width: 60px;
+    border-radius: 5px;
+    font-size: 18px;
+    padding: 10px;
+    margin-left: 5px;
+}
+
+.label-insert{
+    margin-left: 10px;
+}
+
+/* css các phần in pút */
+
+/* Css phần nút ấn */
+
+.btn,.btn-print{
+    margin-left: 25px;
+    height: 30px;
+    padding: 0px 10px 0px 10px;
+    border-radius: 5px;
+    background-color: aquamarine;
+}
+/* .btn-print{
+    margin-top: 20px;
+    margin-left: 73px;
+} */
+
+/* Css phần nút ấn */
+
+
+
+
+/* kết thúc phần thân trang */
