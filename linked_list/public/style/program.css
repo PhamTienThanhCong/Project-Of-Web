@@ -11,24 +11,20 @@
     width: 1000px;
     height: 400px;
     background-color: #ccc;
-    margin: auto;
     margin-top: 10px;
+    position: absolute;
+    left: 50%;
+    margin-left: -500px;
 }
 
 .chill-show{
     width: 35px;
     height: 35px;
-    position: relative;
-    background-color: rebeccapurple;
-    top: 40px;
-    left: 20px;
-}
-
-.chill-arrow{
-    width: 35px;
-    height: 35px;
-    position: relative;
-    background-color:salmon;
-    top: 40px;
-    left: 400px
+    position: absolute;
+    background-color:cadetblue;
+    /* left: 475px; */
+    top: 150px;
+    text-align: center;
+    padding-top: 8px;
+    /* border:  1px solid red; */
 }
