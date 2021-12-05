@@ -4,6 +4,7 @@
 // var node = document.getElementById('test1')
 const widthScreen = 1000;
 var nodes = [];
+const textAlertCode = document.getElementById('textAlertCode')
 
 var pointX = [];
 var firstPoint = widthScreen / (10 + 1) - 25
@@ -50,10 +51,12 @@ function insertNode(index, value) {
 }
 
 function findNodeShow(index) {
-    ll.removeFrom(index);
+    // ll.removeFrom(index);
     if (document.getElementById("move-node")){
         document.getElementById("move-node").remove()
     }
+
+    textAlertCode.innerHTML = "code: find node, tìm tới phần tử index"
 
     var show = []
     var number = []
@@ -78,6 +81,7 @@ function findNodeShow(index) {
             newnode.style.backgroundColor = "red"
             newnode.innerText = document.getElementById(show[i-1]).innerText
             document.getElementById("main-show-to-desk").appendChild(newnode)
+            textAlertCode.innerHTML = "code: find Node, sao chép phẩn tử và đưa ra ngoài"
         }
         if(i > show.length){
             var t = 0;
@@ -89,6 +93,7 @@ function findNodeShow(index) {
                 }else if (t === 2){
                     clearInterval(run2);
                     resetNode()
+                    textAlertCode.innerHTML = "code: find Node, tìm kiếm node hoàn thành"
                     console.log("stop Insert")
                 }
                 t++;
@@ -101,7 +106,11 @@ function findNodeShow(index) {
 function insertNodeShow(index, value) {
     insertNode(index,value)
     // NodeSort()
-
+    if (index > 0){
+        textAlertCode.innerHTML = "code: Insert node, Tìm đến phần tử index - 1"
+    }else{
+        textAlertCode.innerHTML = "code: Insert node vào vị trí đầu tiên"
+    }
     var node = document.createElement("div");
     node.id = nodeId[nodeValue.length - 1]
     node.innerHTML = nodeValue[nodeValue.length - 1]
@@ -133,6 +142,7 @@ function insertNodeShow(index, value) {
                 }               
             }
             i = nodeValue.length;
+            textAlertCode.innerHTML = "code: Insert node, đẩy các phần tử còn lại"
         }
         i++;
         if(i > nodeValue.length){       
@@ -146,11 +156,12 @@ function insertNodeShow(index, value) {
                     document.getElementById(nodeId[nodeValue.length - 1]).style.left = pointX[nodePoint[nodeValue.length - 1]]+"px"
                 }else if(t === 1){
                     document.getElementById(nodeId[nodeValue.length - 1]).style.top = "150px"; 
+                    textAlertCode.innerHTML = "code: Insert node, Chèn node mới vào"
                 }else if (t === 2){
                     clearInterval(run2);
                     resetNode()
-                    console.log("stop Insert")
-                    
+                    console.log("stop Insert") 
+                    textAlertCode.innerHTML = "code: Insert node, hoàn thành"
                 }
                 t++;
             },1000)
@@ -163,7 +174,11 @@ function deleteNodeShow(index) {
     if (document.getElementById("move-node")){
         document.getElementById("move-node").remove()
     }
-
+    if (index > 0){
+        textAlertCode.innerHTML = "code: delete Node ở phần tử đầu tiên"
+    }else{
+        textAlertCode.innerHTML = "code: delete Node, tìm tới phần tử index - 1"
+    }
     var show = []
     var number = []
     for (var i = 0; i < nodeValue.length; i++) {
@@ -189,6 +204,7 @@ function deleteNodeShow(index) {
                     nodePoint[j] -= 1
                 }
             }
+            textAlertCode.innerHTML = "code: delete Node, tìm thấy phần tử cần xóa"
             document.getElementById(show[i-1]).style.backgroundColor = "red"
             document.getElementById(show[i-1]).id = "move-node"
             nodeValue.splice(pointDelete, 1);
@@ -199,6 +215,7 @@ function deleteNodeShow(index) {
             var t = 0;
             const run2 = setInterval(function(){
                 if (t === 0){
+                    textAlertCode.innerHTML = "code: delete Node, di chuyển phần tử đó ra khỏi node"
                     document.getElementById("move-node").style.top = "280px"
                 }else if(t === 1){
                     document.getElementById("move-node").style.left = "60px"; 
@@ -207,6 +224,7 @@ function deleteNodeShow(index) {
                     console.log("stop Delete")
                     clearInterval(run2);
                     resetNode()
+                    textAlertCode.innerHTML = "code: delete Node, nối node lại với nhau và hoàn thành"
                 }
                 t++;
             },1000)
@@ -240,6 +258,8 @@ function hoverAll(){
             clearInterval(run);
             console.log("stop hover")
             resetNode()
+            textAlert.innerHTML = "Thông báo: vị trí quá lớn không phù hợp"
+            textAlertCode.innerHTML = "code: Fail"
         }
         i++;
     }, 1000)

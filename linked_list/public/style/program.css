@@ -30,3 +30,11 @@
     z-index: 1;
     transition: all 1s ease-in-out;
 }
+
+#textAlert{
+    margin-top: 14px;
+    margin-left: 9px;
+}
+#textAlertCode{
+    margin-left: 9px;
+}
