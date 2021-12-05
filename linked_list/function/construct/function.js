@@ -10,17 +10,20 @@ function insertNodeFunction(){
     if(inputIndexOfValue.value){
         indexRun = parseInt(inputIndexOfValue.value);
         inputIndexOfValue.value = "";
-    }else{
-        indexRun = 0;
     }
     if(inputValue.value){
         valueInput = inputValue.value;
         inputValue.value = "";
         doRun = true;
     }
-    if (doRun){
-        insertNodeShow(indexRun,valueInput)
-        doRun = false;
+    if(indexRun <= ll.size_of_list()){
+        if (doRun){
+            insertNodeShow(indexRun,valueInput)
+            doRun = false;
+        }
+    }
+    else{
+        hoverAll()
     }
 }
 
@@ -30,12 +33,18 @@ function FindNodeFunction(type){
         inputIndexOfFind.value = "";
         doRun = true;
     }
-    if (doRun && type === 0){
-        findNodeShow(indexRun)
-        doRun = false;
-    }
-    if (doRun && type === 1){
-        deleteNodeShow(indexRun)
-        doRun = false;
+    if(indexRun < ll.size_of_list()){
+        if (doRun && type === 0){
+            findNodeShow(indexRun)
+            doRun = false;
+        }
+        if (doRun && type === 1){
+            deleteNodeShow(indexRun)
+            doRun = false;
+        }
+    } 
+    else{
+        hoverAll()
     }
 }
+

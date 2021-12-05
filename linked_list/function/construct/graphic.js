@@ -216,6 +216,36 @@ function deleteNodeShow(index) {
     }, 1000)
 }
 
+function hoverAll(){
+    if (document.getElementById("move-node")){
+        document.getElementById("move-node").remove()
+    }
+
+    var show = []
+    var number = []
+    for (var i = 0; i < nodeValue.length; i++) {
+        show.push(nodeId[i])
+        number.push(nodePoint[i])
+    }
+    NodeSort(show, number)
+    var i = 0;
+    const run = setInterval(function () {
+        if (i < show.length) {
+            document.getElementById(show[i]).style.border = "2px solid red"
+        }
+        if (i === show.length) {
+            document.getElementById(show[i-1]).style.backgroundColor = "red"
+        }
+        if(i > show.length){
+            clearInterval(run);
+            console.log("stop hover")
+            resetNode()
+        }
+        i++;
+    }, 1000)
+}
+
+
 function NodeSort(show,number) {
     let n = number.length;
         for (let i = 0; i < n-1; i++) {
@@ -234,10 +264,16 @@ function NodeSort(show,number) {
 
 function resetNode() {
     for (var j = 0; j < nodeId.length; j++) {
+        document.getElementById(nodeId[j]).style.backgroundColor = "cadetblue"
         document.getElementById(nodeId[j]).style.border = "1px solid black"
         document.getElementById(nodeId[j]).style.left = pointX[nodePoint[j]]+"px"
     }   
 }
 
+window.addEventListener('resize', function(event) {
+    for (var i = 0; i < arrow.length; i++) {
+        arrow[i].update({source: {x: pointX[i]+35+(window.innerWidth-widthScreen)/2, y: 378},destination: {x: pointX[i]+(window.innerWidth-widthScreen)/2+sizePoint, y: 378} });
+    }
+}, true);
 
 
