@@ -1,6 +1,6 @@
 // const arrow = arrowLine({source: '#test1', destination: '#test2', thickness: 3, color: 'red', endpoint:{size: 0.5}});
 // const arrow = arrowLine({x: 20+35, y: 250+15}, {x: 400, y: 400+15},{thickness: 3, color: 'red', endpoint:{size: 0.5}});
-
+// update({color: "red",endpoint:{size: 0.5}})
 // var node = document.getElementById('test1')
 const widthScreen = 1000;
 var nodes = [];
@@ -19,6 +19,11 @@ var sizePoint = pointX[1] - pointX[0]
 var nodeValue = ['null']
 var nodePoint = [0];
 var nodeId = ['node-NULL'];
+var arrow = []
+
+for (var i = 0; i < pointX.length-1; i++) {
+    arrow.push(arrowLine({x: pointX[i]+35+(window.innerWidth-widthScreen)/2, y: 378}, {x: pointX[i]+(window.innerWidth-widthScreen)/2+sizePoint, y: 378},{thickness: 3, color: '#ccc', endpoint:{size: 0.5}}))
+}
 
 
 function showNode() {
@@ -30,7 +35,7 @@ function showNode() {
     document.getElementById("main-show-to-desk").appendChild(node)
 }
 showNode()
-insertNodeShow(0, 1)
+// insertNodeShow(0, 1)
 
 function insertNode(index, value) {
     ll.insertAt(index, value);
@@ -63,14 +68,14 @@ function findNodeShow(index) {
     var i = 0;
     const run = setInterval(function () {
         if (i < show.length) {
-            document.getElementById(show[i]).style.border = "2px solid #66ff33"
+            document.getElementById(show[i]).style.border = "2px solid red"
         } else if(i === show.length){
             var newnode = document.createElement("div");
             newnode.className = "chill-show"
             newnode.style.left = document.getElementById(show[i-1]).style.left
             newnode.style.top = document.getElementById(show[i-1]).style.top
             newnode.id = "move-node"
-            newnode.style.backgroundColor = "#33cc33"
+            newnode.style.backgroundColor = "red"
             newnode.innerText = document.getElementById(show[i-1]).innerText
             document.getElementById("main-show-to-desk").appendChild(newnode)
         }
@@ -120,6 +125,7 @@ function insertNodeShow(index, value) {
     const run = setInterval(function() {
         if (i<show.length){
             document.getElementById(show[i]).style.border = "2px solid red"
+            // arrow[number[i]].update({color: "red",endpoint:{size: 0.5}})
         }else if(i===show.length){
             for (var j = 0; j <nodeValue.length; j++){
                 if (nodePoint[j] !== index){
@@ -134,6 +140,7 @@ function insertNodeShow(index, value) {
             if (index === 0){
                 t=1;
             }
+            arrow[nodeId.length-2].update({thickness: 3, color: 'black', endpoint:{size: 0.5}})
             const run2 = setInterval(function(){
                 if (t === 0){
                     document.getElementById(nodeId[nodeValue.length - 1]).style.left = pointX[nodePoint[nodeValue.length - 1]]+"px"
@@ -143,6 +150,7 @@ function insertNodeShow(index, value) {
                     clearInterval(run2);
                     resetNode()
                     console.log("stop Insert")
+                    
                 }
                 t++;
             },1000)
@@ -195,6 +203,7 @@ function deleteNodeShow(index) {
                 }else if(t === 1){
                     document.getElementById("move-node").style.left = "60px"; 
                 }else if (t === 2){
+                    arrow[nodeId.length-1].update({thickness: 3, color: '#ccc', endpoint:{size: 0.5}})
                     console.log("stop Delete")
                     clearInterval(run2);
                     resetNode()
@@ -205,6 +214,29 @@ function deleteNodeShow(index) {
         }
         i++;
     }, 1000)
+}
+
+function NodeSort(show,number) {
+    let n = number.length;
+        for (let i = 0; i < n-1; i++) {
+            for (let j = i+1; j < n; j++) {
+                if(number[j]<number[i]){
+                    var temp = number[i]
+                    number[i] = number[j]
+                    number[j] = temp
+                    var temp = show[i]
+                    show[i] = show[j]
+                    show[j] = temp
+                }
+            }
+        }
+}
+
+function resetNode() {
+    for (var j = 0; j < nodeId.length; j++) {
+        document.getElementById(nodeId[j]).style.border = "1px solid black"
+        document.getElementById(nodeId[j]).style.left = pointX[nodePoint[j]]+"px"
+    }   
 }
 
 
