@@ -26,5 +26,6 @@
     top: 150px;
     text-align: center;
     padding-top: 8px;
-    /* border:  1px solid red; */
+    border-radius: 50%;
+    border:  1px solid black;
 }
