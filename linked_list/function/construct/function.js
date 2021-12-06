@@ -32,13 +32,16 @@ function insertNodeFunction(){
             }
             else{
                 textAlert.innerHTML = "Thông báo: Nhập sai giá trị đầu vào idex > 0"
+                alert("Thông báo: Thiếu Giá trị đầu vào không hợp lệ")
             }
         }else{
+            alert("Thông báo: Thiếu Giá trị ở input")
             textAlert.innerHTML = "Thông báo: Bạn phải nhập giá trị để chèn vào"
         }  
     }
     else{
         textAlert.innerHTML = "Thông báo: Bạn phải nhập giá trị index để xắp xếp"
+        alert("Thông báo: Thiếu Giá trị ở input")
     } 
         
 }
@@ -70,9 +73,32 @@ function FindNodeFunction(type){
             }
         }else{
             textAlert.innerHTML = "Thông báo: Nhập sai giá trị đầu vào idex > 0"
+            alert("Thông báo: Thiếu Giá trị đầu vào không hợp lệ")
         }
     }else{
         textAlert.innerHTML = "Thông báo: Bạn phải nhập giá trị index để xắp xếp"
+        alert("Thông báo: Thiếu Giá trị ở input")
     }
 }
 
+function clearFunction(){
+    textAlertCode.innerHTML = "khởi đông lại"
+    textAlertCode.innerHTML = "khởi động lại"
+    doRun = false;
+    nodeValue = ['null']
+    nodePoint = [0];
+    nodeId = ['node-NULL'];
+    document.getElementById("main-show-to-desk").remove();
+    var show = document.createElement("div");
+    show.id = "main-show-to-desk";
+    document.getElementById("main-show").appendChild(show);
+    showNode()
+    ll = new LinkedList();
+    clearArrow()
+}
+
+function clearArrow(){
+    for (var i = 0; i <arrow.length; i++){
+        arrow[i].update({thickness: 3, color: '#ccc', endpoint:{size: 0.5}})
+    }
+}

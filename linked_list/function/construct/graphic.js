@@ -1,10 +1,13 @@
-// const arrow = arrowLine({source: '#test1', destination: '#test2', thickness: 3, color: 'red', endpoint:{size: 0.5}});
-// const arrow = arrowLine({x: 20+35, y: 250+15}, {x: 400, y: 400+15},{thickness: 3, color: 'red', endpoint:{size: 0.5}});
-// update({color: "red",endpoint:{size: 0.5}})
-// var node = document.getElementById('test1')
 const widthScreen = 1000;
 var nodes = [];
 const textAlertCode = document.getElementById('textAlertCode')
+var sizeWindow
+
+if (window.innerWidth>1000){
+    sizeWindow = (window.innerWidth-widthScreen)/2
+}else{
+    sizeWindow = window.innerWidth - widthScreen
+}
 
 var pointX = [];
 var firstPoint = widthScreen / (10 + 1) - 25
@@ -23,7 +26,7 @@ var nodeId = ['node-NULL'];
 var arrow = []
 
 for (var i = 0; i < pointX.length-1; i++) {
-    arrow.push(arrowLine({x: pointX[i]+35+(window.innerWidth-widthScreen)/2, y: 378}, {x: pointX[i]+(window.innerWidth-widthScreen)/2+sizePoint, y: 378},{thickness: 3, color: '#ccc', endpoint:{size: 0.5}}))
+    arrow.push(arrowLine({x: pointX[i]+35+sizeWindow, y: 378}, {x: pointX[i]+sizeWindow+sizePoint, y: 378},{thickness: 3, color: '#ccc', endpoint:{size: 0.5}}))
 }
 
 
@@ -260,6 +263,7 @@ function hoverAll(){
             resetNode()
             textAlert.innerHTML = "Thông báo: vị trí quá lớn không phù hợp"
             textAlertCode.innerHTML = "code: Fail"
+            alert("Lỗi phần tử tìm kiếm không tồn tại")
         }
         i++;
     }, 1000)
@@ -291,8 +295,13 @@ function resetNode() {
 }
 
 window.addEventListener('resize', function(event) {
+    if (window.innerWidth>1000){
+        sizeWindow = (window.innerWidth-widthScreen)/2
+    }else{
+        sizeWindow = window.innerWidth - widthScreen
+    }
     for (var i = 0; i < arrow.length; i++) {
-        arrow[i].update({source: {x: pointX[i]+35+(window.innerWidth-widthScreen)/2, y: 378},destination: {x: pointX[i]+(window.innerWidth-widthScreen)/2+sizePoint, y: 378} });
+        arrow[i].update({source: {x: pointX[i]+35+sizeWindow, y: 378},destination: {x: pointX[i]+sizeWindow+sizePoint, y: 378} });
     }
 }, true);
 
