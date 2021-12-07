@@ -1,0 +1,93 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    height: 620px;
+    background: linear-gradient(45deg, #00853e, #50c878);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card{
+    width: 300px;
+    height: 400px;
+    background-color: #242628;
+    border-radius: 20px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.card-img{
+    transition: all 0.8s;
+    width: 120px;
+    height: 120px;
+    border: 3px solid #f2726a;
+    border-radius: 50%;
+    margin: 0 auto;
+    overflow: hidden;
+    transform: translateY(25px);
+}
+
+.card-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.card h2{
+    margin-top: 50px;
+    color: white;
+}
+
+.card p{
+    margin-top: 10px;
+    color: #f2726a;
+    font-size: 20px;
+}
+
+.card-social-icon{
+    margin-top: 25px;
+}
+
+.card-social-icon a{
+    margin: 0 15px;
+    color: white;
+    font-size: 25px;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.card button{
+    transition: all 0.5s;
+    font-size: 15px;
+    margin-top: 30px;
+    background-color: transparent;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    border:  1px solid #f2726a;
+    cursor: pointer;
+}
+
+.card-social-icon a:hover{
+    color: #f2726a;
+}
+
+.card button:hover{
+    background-color: #f2726a;
+}
+
+.card-img:hover{
+    border: none;
+    width: 100%;
+    height: 100%;
+    border-radius: 0px;
+    transform: unset;
+}
