@@ -1,0 +1,110 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient( 45deg, rgb(65, 88, 208) 0%, rgb(200, 80, 192) 50%, rgb(255, 204, 112) 100% );
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+
+.open-modal-btn{
+    margin: auto;
+    padding: 20px 30px;
+    font-size: 18px;
+    border-radius: 10px;
+    border: none;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.open-modal-btn:hover{
+    background-color:bisque;
+}
+
+.open-modal-btn:active{
+    background-color: red;
+}
+
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+}
+
+.show-modal{
+    margin: auto;
+    margin-top: 200px;
+    width: 420px;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    animation: modalShow 0.3s linear;
+}
+
+.modal-header{
+    background-color:#e26e70;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    font-size: 18px;
+}
+
+.modal-header i{
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.modal-title{
+    padding: 15px;
+}
+
+.modal-title h2{
+    color: #e26e70;
+    margin-bottom: 10px;
+}
+
+.modal-footer{
+    padding: 15px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.modal-footer button{
+    padding: 10px 20px;
+    background-color: #e26e70;
+    border: none;
+    border-radius: 5px;
+    transition: 0.5s;
+    color: white;
+    cursor: pointer;
+}
+
+.modal-footer button:hover{
+    transform: scale(0.95);
+    background-color:brown;
+}
+
+.hidden{
+    display: none;
+    animation: hiddenModal 0.3s linear;
+}
+
+@keyframes modalShow{
+    from {
+        margin-top: 0;
+        opacity: 0;
+    }
+    to {
+        margin-top: 200px;
+        opacity: 1;
+    } 
+}
