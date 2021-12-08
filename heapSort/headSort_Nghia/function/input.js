@@ -12,8 +12,6 @@ var run
 var c = document.getElementById("root");
 var ctx = c.getContext("2d");
 var inputValue = document.getElementById('inputValue');
-var TextComment = ""
-var commentShow = []
 var rangeInput = document.getElementById('range')
 var rangeFaster = document.getElementById('range-faster')
 var fasterValue = 1900 - rangeFaster.value
@@ -44,7 +42,7 @@ function ramdomValue(){
     var a = [];
     var statusTree = []
     var teamp = 0;
-    for (var i = 0; i < 31; i++){
+    for (var i = 0; i < 11; i++){
         teamp = Math.floor(Math.random() * 100)
         while(a.includes(teamp)){
             teamp = Math.floor(Math.random() * 100)

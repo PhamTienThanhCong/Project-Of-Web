@@ -76,7 +76,6 @@ function xapXep(){
     if(valueInputSort.length){
         resetValue()
         heapSort()
-        showCommentToDesktop()
         testShow() 
     }
 }
@@ -86,7 +85,6 @@ function xapXepDown(){
     if(valueInputSort.length){
         resetValue()
         heapSortDown()
-        showCommentToDesktop()
         testShow()
     }
 }
@@ -119,7 +117,6 @@ function resetValue(){
             clearInterval(run)
             run = undefined
         }
-        deleteCommentShow()
         rangeInput.value = 0
         rangeInput.max = 1
         showTree=[]

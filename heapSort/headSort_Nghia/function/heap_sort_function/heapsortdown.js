@@ -10,7 +10,6 @@ function heapifyDown(valueInputSort, N, i) {
         status: convetArrayToString(arrayStatus),
         value: convetArrayToString(arrayValue),
         length: lengthTree,
-        comment: TextComment
     })
     // graphic }
 
@@ -25,8 +24,7 @@ function heapifyDown(valueInputSort, N, i) {
         showTree.push({
             status: convetArrayToString(arrayStatus),
             value: convetArrayToString(arrayValue),
-            length: lengthTree,
-            comment: TextComment
+            length: lengthTree
         })
         // graphic }
     }
@@ -46,7 +44,6 @@ function heapifyDown(valueInputSort, N, i) {
             status: convetArrayToString(arrayStatus),
             value: convetArrayToString(arrayValue),
             length: lengthTree,
-            comment: TextComment
         })
         // graphic }
     }
@@ -65,7 +62,6 @@ function heapifyDown(valueInputSort, N, i) {
             status: convetArrayToString(arrayStatus),
             value: convetArrayToString(arrayValue),
             length: lengthTree,
-            comment: TextComment
         })
         // graphic }
 
@@ -76,31 +72,26 @@ function heapifyDown(valueInputSort, N, i) {
 function buildHeapDown() {
     // graphic {
     commentShow.push({
-        comment: "Xắp xếp giảm với Dãy đã cho là: ",
         array: convetArrayToString(valueInputSort),
         status: convetArrayToString(statusTrees),
     })
     // graphic }
 
-    TextComment = "Vun đống, tìm giá trị nhỏ nhất để đặt lên đầu"
     let m = Math.floor(valueInputSort.length / 2 - 1);
     for (let i = m; i >= 0; i--) {
         heapifyDown(valueInputSort, valueInputSort.length, i);
     }
 
     // graphic
-    TextComment = "Vun đống Thành Công, Đỉnh Đống = "+ valueInputSort[0]  
     arrayValue = copyArray(valueInputSort)
     arrayStatus = copyArray(statusTrees)
     showTree.push({
         status: convetArrayToString(arrayStatus),
         value: convetArrayToString(arrayValue),
         length: lengthTree,
-        comment: TextComment
     })
 
     commentShow.push({
-        comment: "vun đống với giá trị đỉnh đống là "+valueInputSort[0]+": ",
         array: convetArrayToString(valueInputSort),
         status: convetArrayToString(statusTrees),
     })
@@ -118,7 +109,6 @@ function heapSortDown() {
         valueInputSort[i] = t;
 
         // graphic {
-        TextComment = "Đổi Chỗ "+valueInputSort[0]+" và "+ valueInputSort[i+1]+". Đỉnh Đống xuống cuối đống"
         statusTrees[lengthTree-1]='3'
         statusTrees[0]='1'
         arrayValue = copyArray(valueInputSort)
@@ -127,30 +117,25 @@ function heapSortDown() {
             status: convetArrayToString(arrayStatus),
             value: convetArrayToString(arrayValue),
             length: lengthTree,
-            comment: TextComment
         })
         showTree.push({
             status: convetArrayToString(arrayStatus),
             value: convetArrayToString(arrayValue),
             length: lengthTree,
-            comment: TextComment
         })
         commentShow.push({
-            comment: "Đổi chỗ đỉnh đống là: "+t+" xuống đáy đống ",
             array: convetArrayToString(valueInputSort),
             status: convetArrayToString(statusTrees),
         })
         statusTrees[0]='0'
         statusTrees[i] = '3'
         lengthTree--;
-        TextComment = "Vun lại đống, sau khi Đổi Đỉnh"
         // graphic }
 
         heapifyDown(valueInputSort, i, 0);
          
         // graphic{
         commentShow.push({
-            comment: "Vun lại đống, và giá trị đống mới là: "+valueInputSort[0],
             array: convetArrayToString(valueInputSort),
             status: convetArrayToString(statusTrees),
         })
@@ -165,12 +150,10 @@ function heapSortDown() {
         status: convetArrayToString(statusTrees),
         value: convetArrayToString(arrayValue),
         length: lengthTree,
-        comment: "Xắp Xếp Thành Công"
     })
     // graphic }
     commentShow.pop()
     commentShow.push({
-        comment: "Xắp xếp đống thành công",
         array: convetArrayToString(valueInputSort),
         status: convetArrayToString(statusTrees),
     })

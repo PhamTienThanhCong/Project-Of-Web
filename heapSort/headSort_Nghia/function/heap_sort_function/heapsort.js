@@ -86,11 +86,9 @@ function buildHeap(){
         status: convetArrayToString(arrayStatus),
         value: convetArrayToString(arrayValue),
         length: lengthTree,
-        comment: TextComment
     })
 
     commentShow.push({
-        comment: "vun đống với giá trị đỉnh đống là "+valueInputSort[0]+": ",
         array: convetArrayToString(valueInputSort),
         status: convetArrayToString(statusTrees),
     })
@@ -104,7 +102,6 @@ function heapSort(){
     
     
     for(let i = valueInputSort.length - 1; i >= 0; i--)    {
-        TextComment = "Đổi Chỗ "+valueInputSort[0]+" và "+ valueInputSort[i]+". Đỉnh Đống xuống cuối đống"
         let t = valueInputSort[0];
         valueInputSort[0] = valueInputSort[i];
         valueInputSort[i] = t;  
@@ -118,27 +115,22 @@ function heapSort(){
             status: convetArrayToString(arrayStatus),
             value: convetArrayToString(arrayValue),
             length: lengthTree,
-            comment: TextComment
         })
         showTree.push({
             status: convetArrayToString(arrayStatus),
             value: convetArrayToString(arrayValue),
             length: lengthTree,
-            comment: TextComment
         })
 
         commentShow.push({
-            comment: "Đổi chỗ đỉnh đống là: "+t+" xuống đáy đống ",
             array: convetArrayToString(valueInputSort),
             status: convetArrayToString(statusTrees),
         })
         // graphic   
         statusTrees[i]='3' 
         lengthTree--; 
-        TextComment = "Vun lại đống, sau khi Đổi Đỉnh"
         heapify(valueInputSort, i, 0);
         commentShow.push({
-            comment: "Vun lại đống, và giá trị đống mới là: "+valueInputSort[0],
             array: convetArrayToString(valueInputSort),
             status: convetArrayToString(statusTrees),
         })
@@ -150,12 +142,10 @@ function heapSort(){
         status: convetArrayToString(statusTrees),
         value: convetArrayToString(arrayValue),
         length: lengthTree,
-        comment: "Xắp Xếp Thành Công"
     })
 
     commentShow.pop()
     commentShow.push({
-        comment: "Xắp xếp đống thành công",
         array: convetArrayToString(valueInputSort),
         status: convetArrayToString(statusTrees),
     })
