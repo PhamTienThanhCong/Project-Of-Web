@@ -137,13 +137,6 @@ function showNode(valueInputSort,statusTrees,length){
     ctx.fillText('Giá trị Thay thế nốt cha',960,525);     
 }
 
-// var commentShow = document.getElementById('comment');
-
-// var show = document.createElement('div');
-// show.innerHTML = 'hello'
-// show.className = 'node-cha'
-// document.getElementById('comment').appendChild(show);
-
 function showCommentToDesktop(){
     for(var i = 0; i<commentShow.length; i++){
         var idnode = "node"+i+"";

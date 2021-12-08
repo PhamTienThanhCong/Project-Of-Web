@@ -24,7 +24,6 @@ function runShow(){
         rangeInput.value = i_Loop
         const a1 = (showTree[i_Loop].value).split(',')
         const a2 = (showTree[i_Loop].status).split(',')
-        valueTextComment.innerHTML =  showTree[i_Loop].comment
         showNode(a1,a2,showTree[i_Loop].length)
         i_Loop++;
         if(i_Loop===showTree.length){

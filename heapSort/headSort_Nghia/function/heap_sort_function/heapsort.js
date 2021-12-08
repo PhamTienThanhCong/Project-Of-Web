@@ -10,7 +10,6 @@ function heapify(valueInputSort, N, i){
         status: convetArrayToString(arrayStatus),
         value: convetArrayToString(arrayValue),
         length:lengthTree,
-        comment: TextComment
     })
     // graphic
 
@@ -26,7 +25,6 @@ function heapify(valueInputSort, N, i){
             status: convetArrayToString(arrayStatus),
             value: convetArrayToString(arrayValue),
             length:lengthTree,
-            comment: TextComment
         })
         // graphic
     }
@@ -46,7 +44,6 @@ function heapify(valueInputSort, N, i){
             status: convetArrayToString(arrayStatus),
             value: convetArrayToString(arrayValue),
             length:lengthTree,
-            comment: TextComment
         })
         // graphic
     }
@@ -65,7 +62,6 @@ function heapify(valueInputSort, N, i){
             status: convetArrayToString(arrayStatus),
             value: convetArrayToString(arrayValue),
             length:lengthTree,
-            comment: TextComment
         })
         // graphic
 
@@ -75,18 +71,14 @@ function heapify(valueInputSort, N, i){
 		     
 function buildHeap(){
     commentShow.push({
-        comment: "Xắp xếp tăng với Dãy đã cho là: ",
         array: convetArrayToString(valueInputSort),
         status: convetArrayToString(statusTrees),
     })
 
-    TextComment = "Vun đống, tìm giá trị Lớn nhất để đặt lên đầu"
     let m = Math.floor(valueInputSort.length / 2 - 1);
     for(let i = m; i >= 0; i--){
         heapify(valueInputSort, valueInputSort.length, i);
     }
-    
-    TextComment = "Vun đống Thành Công, Đỉnh Đống = "+ valueInputSort[0]
     // graphic
     arrayValue = copyArray(valueInputSort)
     arrayStatus = copyArray(statusTrees)

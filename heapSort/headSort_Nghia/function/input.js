@@ -12,7 +12,6 @@ var run
 var c = document.getElementById("root");
 var ctx = c.getContext("2d");
 var inputValue = document.getElementById('inputValue');
-const valueTextComment = document.getElementById("TextComment")
 var TextComment = ""
 var commentShow = []
 var rangeInput = document.getElementById('range')
@@ -23,7 +22,6 @@ var doRun = 1
 function getValueFromInput() {
     const valueInput = inputValue.value;
     if (valueInput){
-        valueTextComment.innerHTML = "Nhận Giá trị từ input";
         var statusTree = [];
         var a = [];
         valueInputSort = valueInput.split(',');
@@ -37,14 +35,12 @@ function getValueFromInput() {
         showNode(valueInputSort,statusTrees,valueInputSort.length)
     }
     else{
-        valueTextComment.innerHTML = "Bạn Phải điền giá trị vào input";
         alert("Bạn Phải điền giá trị vào input")
     }
     
 }
 
 function ramdomValue(){   
-    valueTextComment.innerHTML = "Nhận Giá trị ngẫu nhiên từ input";
     var a = [];
     var statusTree = []
     var teamp = 0;
