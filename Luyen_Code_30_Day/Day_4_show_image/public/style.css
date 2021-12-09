@@ -1,0 +1,108 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.5s;
+}
+
+body{
+    background-color: #dadada;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-lish{
+    width: 1200px;
+    display: flex;
+    margin: auto;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.image{
+    width: 23%;
+    height: 200px;
+    margin: 20px 10px;
+    display: flex;
+    border-radius: 7px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.image img{
+    width: 100%;
+    height: 100%;
+    object-position: center;
+    object-fit: cover;
+}
+
+.image:hover img{
+    transform: scale(1.3);
+}
+
+.image-show{
+    width: 60%;
+    height: 60vh;
+    position: fixed;
+    top: 100px;
+    left: 100px;
+    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.show-image{
+    width: 80%;
+    height: 520px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%)
+}
+
+.show-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.bx{
+    color: white;
+    font-size: 46px;
+    cursor: pointer;
+    position: absolute;
+}
+
+.bx-x{
+    top: 20px;
+    right: 20px;
+}
+.bxs-chevron-left{
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%)
+}
+.bxs-chevron-right{
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%)
+}
+
+.hidden{
+    pointer-events:visible;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    opacity: 1;
+}
+
+.hiddenIcon{
+    opacity: 0;
+    pointer-events: none;
+}
