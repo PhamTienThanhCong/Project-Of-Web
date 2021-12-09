@@ -15,134 +15,95 @@ for (var i = 1; i <= 16; i = i * 2) {
     }
     topTree = topTree + 80
 }
+// ramdomValue()
 
-function showNode(valueInputSort,statusTrees,length){
-    ctx.clearRect(0, 0, widthScreen, 700);
-    ctx.font = "20px Times New Roman";
-    ctx.fillStyle = "black";
-    ctx.fillText("Mảng ", 20,40);   
-    // ctx.fillText("Mảng: ",100,45);
-    var pointLeft = 95
-    for (var i = 0;i<valueInputSort.length;i++){
-        // show phần tiêu đề
-        ctx.beginPath();
-        if (statusTrees[i]==='1'){
-            ctx.fillStyle = "red";
-            ctx.rect(pointLeft , 20, 31, 31);
-            ctx.fillRect(pointLeft , 20, 31, 31);
-        }else if (statusTrees[i] === '2'){
-            ctx.fillStyle = "#33cc33";
-            ctx.rect(pointLeft , 20, 31, 31);
-            ctx.fillRect(pointLeft , 20, 31, 31);
-        }
-        else if(statusTrees[i] === '3'){
-            ctx.fillStyle = "#ffff00";
-            ctx.rect(pointLeft , 20, 31, 31);
-            ctx.fillRect(pointLeft , 20, 31, 31);
-        }
-        else{
-            ctx.fillStyle = "#b3ecff";
-            ctx.rect(pointLeft , 20, 31, 31);
-            ctx.fillRect(pointLeft , 20, 31, 31);
-        }
-        ctx.stroke();   
-
-        ctx.font = "20px Times New Roman";
-        ctx.fillStyle = "black";
-        if(valueInputSort[i]>9){
-            ctx.fillText(valueInputSort[i], pointLeft+5,42);   
-        }else{
-            ctx.fillText(valueInputSort[i], pointLeft+10,42);   
-        }
-        
-        pointLeft += 34    
+function createArrow(){
+    if(document.getElementById("mainShowValue")){
+        resetAllTree()
+    }
+    local = []
+    
+    for (var i = 0; i < valueInputSort.length; i++) {
+        var a = document.createElement("div");
+        a.className = "childHidden";
+        a.style.top = pointTrees[i].top + "px";
+        a.style.left = pointTrees[i].left + "px";
+        a.id = "hinderItem"+i+""
+        document.getElementById("mainShowValue").appendChild(a)
+        local.push(i)
     }
 
-    for (var i=1; i<valueInputSort.length; i++){
-        ctx.beginPath();
-        ctx.moveTo(pointTrees[pointTrees[i].conect].left+25, pointTrees[pointTrees[i].conect].top+5);
-        ctx.lineTo(pointTrees[i].left+25, pointTrees[i].top-20);
-        ctx.stroke();
+    for (var i = valueInputSort.length - 1; i > 0; i--) {
+        var arrow = document.createElement("connection");
+        var from = "#hinderItem"+(Math. round( i/2 )-1)+""
+        var to = "#hinderItem"+(i)+""
+        arrow.setAttribute("from",from);
+        arrow.setAttribute("to",to);
+        arrow.setAttribute("color","red");
+        arrow.setAttribute("tail","true");
+        // fromX="0" fromY="1" toX="0" toY="0.75"
+        if (i<7){
+            if( i % 2 === 0){
+                arrow.setAttribute("fromX","0.5")
+                arrow.setAttribute("fromY","0.5")
+                arrow.setAttribute("toX","0")
+                arrow.setAttribute("toY","0.35")
+            }else{
+                arrow.setAttribute("fromX","0.5")
+                arrow.setAttribute("fromY","0.5")
+                arrow.setAttribute("toX","1")
+                arrow.setAttribute("toY","0.3")
+            }
+        }
+        else {
+            arrow.setAttribute("fromX","0.5")
+            arrow.setAttribute("fromY","0.5")
+            arrow.setAttribute("toX","0.5")
+            arrow.setAttribute("toY","0")
+        }
+        document.getElementById("mainShowValue").appendChild(arrow);
+    }
+    createTreeNode()
+}
+function createTreeNode(){
+    for (var i = 0; i < valueInputSort.length; i++) {
+        var a = document.createElement("div");
+        a.className = "childShow";
+        a.style.top = pointTrees[i].top + "px";
+        a.style.left = pointTrees[i].left + "px";
+        a.innerHTML = valueInputSort[i]
+        a.id = "showItem"+i+"";
+        // a.id = "ShowItem"+i+""
+        document.getElementById("mainShowValue").appendChild(a)
+    }
+}
+
+function updateTreeNode(status, type){
+    for (var i = 0; i < type.length; i++) {
+        var idShow = "showItem"+type[i]+""
+        var a = document.getElementById(idShow)
+        if (status[i]==='1'){
+            a.style.backgroundColor = "red"
+        }else if(status[i]==='2'){
+            a.style.backgroundColor = "green"
+        }else if(status[i]==='3'){
+            a.style.backgroundColor = "yellow"
+        }else{
+            a.style.backgroundColor = "aqua"
+        }
+        a.style.top = pointTrees[parseInt(i)].top + "px"
+        a.style.left = pointTrees[parseInt(i)].left + "px"
+    }
 }
 
 
-    for (var i=0; i<valueInputSort.length; i++){
-        ctx.beginPath();
-        ctx.fillStyle = ''
-        ctx.arc(pointTrees[i].left+25, pointTrees[i].top, 20, 0, 2 * Math.PI);
-        if (statusTrees[i]==='1'){
-            ctx.fillStyle = "red";
-            ctx.fill();
-        }else if (statusTrees[i] === '2'){
-            ctx.fillStyle = "#33cc33";
-            ctx.fill();
-        }else if (statusTrees[i] === '3'){
-            ctx.fillStyle = "#ffff00";
-            ctx.fill();
-        }else{
-            ctx.fillStyle = "#b3ecff";
-            ctx.fill();
-        }
-        ctx.stroke();
-        ctx.font = "20px Times New Roman";
-        var reSize = 18
-        var text = parseInt(valueInputSort[i])
-        if (text>9){
-            reSize = 18/2+2
-        }
-        if (text>99){
-            reSize = 18/3
-        }
-        ctx.fillStyle = "black";
-        ctx.fillText(text, pointTrees[i].left+reSize, pointTrees[i].top+9); 
-        
-        if (i>=15){
-            ctx.fillText(i+1, pointTrees[i].left+13, pointTrees[i].top+40);    
-        } else {
-            ctx.fillText(i+1, pointTrees[i].left+50, pointTrees[i].top+5);    
-        }        
-    }
 
-    // giải Thích belike
-    ctx.fillStyle = "#ffff00";
-    ctx.rect(50 , 500, 33, 33);
-    ctx.fillRect(50 , 500, 33, 33);
-    ctx.stroke(); 
-    ctx.font = "20px Times New Roman";
-    ctx.fillStyle = "black";
-    ctx.fillText('Giá trị đã được xắp xếp', 90,525);   
-
-    ctx.fillStyle = "#b3ecff";
-    ctx.rect(370 , 500, 33, 33);
-    ctx.fillRect(370 , 500, 33, 33);
-    ctx.stroke();
-    ctx.font = "20px Times New Roman";
-    ctx.fillStyle = "black";
-    ctx.fillText('Giá trị cần xắp xếp', 415,525); 
-
-    ctx.fillStyle = "#33cc33";
-    ctx.rect(650 , 500, 33, 33);
-    ctx.fillRect(650 , 500, 33, 33);
-    ctx.stroke();
-    ctx.font = "20px Times New Roman";
-    ctx.fillStyle = "black";
-    ctx.fillText('Giá trị các nốt cha', 690,525);   
-
-    ctx.fillStyle = "red";
-    ctx.rect(920 , 500, 33, 33);
-    ctx.fillRect(920 , 500, 33, 33);
-    ctx.stroke();
-    ctx.font = "20px Times New Roman";
-    ctx.fillStyle = "black";
-    ctx.fillText('Giá trị Thay thế nốt cha',960,525);     
+function resetAllTree(){
+    document.getElementById("mainShowValue").remove()
+    var reset = document.createElement("div")
+    reset.id = "mainShowValue"
+    document.getElementById("mainShow").appendChild(reset);
 }
-
-// var commentShow = document.getElementById('comment');
-
-// var show = document.createElement('div');
-// show.innerHTML = 'hello'
-// show.className = 'node-cha'
-// document.getElementById('comment').appendChild(show);
 
 function showCommentToDesktop(){
     for(var i = 0; i<commentShow.length; i++){

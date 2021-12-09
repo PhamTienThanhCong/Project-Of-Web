@@ -22,10 +22,10 @@ function runShow(){
     run = setInterval(function(){
         doRun=true
         rangeInput.value = i_Loop
-        const a1 = (showTree[i_Loop].value).split(',')
         const a2 = (showTree[i_Loop].status).split(',')
+        const a3 = (showTree[i_Loop].localCopy).split(',')
         valueTextComment.innerHTML =  showTree[i_Loop].comment
-        showNode(a1,a2,showTree[i_Loop].length)
+        updateTreeNode(a2,a3)
         i_Loop++;
         if(i_Loop===showTree.length){
             console.log("close")

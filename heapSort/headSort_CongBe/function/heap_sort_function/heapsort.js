@@ -9,6 +9,7 @@ function heapify(valueInputSort, N, i){
     showTree.push({
         status: convetArrayToString(arrayStatus),
         value: convetArrayToString(arrayValue),
+        localCopy: convetArrayToString(local),
         length:lengthTree,
         comment: TextComment
     })
@@ -25,6 +26,7 @@ function heapify(valueInputSort, N, i){
         showTree.push({
             status: convetArrayToString(arrayStatus),
             value: convetArrayToString(arrayValue),
+            localCopy: convetArrayToString(local),
             length:lengthTree,
             comment: TextComment
         })
@@ -45,6 +47,7 @@ function heapify(valueInputSort, N, i){
         showTree.push({
             status: convetArrayToString(arrayStatus),
             value: convetArrayToString(arrayValue),
+            localCopy: convetArrayToString(local),
             length:lengthTree,
             comment: TextComment
         })
@@ -56,6 +59,10 @@ function heapify(valueInputSort, N, i){
         valueInputSort[i] = valueInputSort[largest];
         valueInputSort[largest] = t;
 
+        t = local[i];
+        local[i] = local[largest];
+        local[largest] = t;
+
         // graphic
         arrayStatus[i]=1;
         arrayStatus[left] = 0
@@ -64,6 +71,7 @@ function heapify(valueInputSort, N, i){
         showTree.push({
             status: convetArrayToString(arrayStatus),
             value: convetArrayToString(arrayValue),
+            localCopy: convetArrayToString(local),
             length:lengthTree,
             comment: TextComment
         })
@@ -78,6 +86,7 @@ function buildHeap(){
         comment: "Xắp xếp tăng với Dãy đã cho là: ",
         array: convetArrayToString(valueInputSort),
         status: convetArrayToString(statusTrees),
+        localCopy: convetArrayToString(local),
     })
 
     TextComment = "Vun đống, tìm giá trị Lớn nhất để đặt lên đầu"
@@ -94,7 +103,8 @@ function buildHeap(){
         status: convetArrayToString(arrayStatus),
         value: convetArrayToString(arrayValue),
         length: lengthTree,
-        comment: TextComment
+        comment: TextComment,
+        localCopy: convetArrayToString(local),
     })
 
     commentShow.push({
@@ -116,21 +126,22 @@ function heapSort(){
         let t = valueInputSort[0];
         valueInputSort[0] = valueInputSort[i];
         valueInputSort[i] = t;  
+        
         // graphic
+        var lt = local[0];
+        local[0] = local[i];
+        local[i] = lt;
+
 
         statusTrees[lengthTree-1]='3'
         statusTrees[0]='1'
         arrayValue = copyArray(valueInputSort)
         arrayStatus = copyArray(statusTrees)
+        
         showTree.push({
             status: convetArrayToString(arrayStatus),
             value: convetArrayToString(arrayValue),
-            length: lengthTree,
-            comment: TextComment
-        })
-        showTree.push({
-            status: convetArrayToString(arrayStatus),
-            value: convetArrayToString(arrayValue),
+            localCopy: convetArrayToString(local),
             length: lengthTree,
             comment: TextComment
         })
@@ -158,6 +169,7 @@ function heapSort(){
         status: convetArrayToString(statusTrees),
         value: convetArrayToString(arrayValue),
         length: lengthTree,
+        localCopy: convetArrayToString(local),
         comment: "Xắp Xếp Thành Công"
     })
 

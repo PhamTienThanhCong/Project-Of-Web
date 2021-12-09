@@ -10,7 +10,6 @@ var lengthTree=0
 var i_Loop = 0;
 var run
 var c = document.getElementById("root");
-var ctx = c.getContext("2d");
 var inputValue = document.getElementById('inputValue');
 const valueTextComment = document.getElementById("TextComment")
 var TextComment = ""
@@ -19,6 +18,7 @@ var rangeInput = document.getElementById('range')
 var rangeFaster = document.getElementById('range-faster')
 var fasterValue = 1900 - rangeFaster.value
 var doRun = 1
+
 
 function getValueFromInput() {
     const valueInput = inputValue.value;
@@ -34,12 +34,12 @@ function getValueFromInput() {
         valueInputSort = a;
         statusTrees = statusTree;
         lengthTree = valueInputSort.length
-        showNode(valueInputSort,statusTrees,valueInputSort.length)
     }
     else{
         valueTextComment.innerHTML = "Bạn Phải điền giá trị vào input";
         alert("Bạn Phải điền giá trị vào input")
     }
+    createArrow()
     
 }
 
@@ -60,7 +60,7 @@ function ramdomValue(){
     valueInputSort = a;
     inputValue.value = a;
     lengthTree = valueInputSort.length
-    showNode(valueInputSort,statusTrees,valueInputSort.length)
+    createArrow()
 }
 
 
