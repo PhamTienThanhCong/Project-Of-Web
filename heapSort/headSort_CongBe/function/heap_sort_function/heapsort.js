@@ -1,16 +1,13 @@
 function heapify(valueInputSort, N, i){
     let left = 2*i + 1, right = 2*i + 2, largest;
 
-    var arrayValue = copyArray(valueInputSort)
 	var arrayStatus = copyArray(statusTrees)
     
     // graphic
     arrayStatus[i]=2;
     showTree.push({
         status: convetArrayToString(arrayStatus),
-        value: convetArrayToString(arrayValue),
         localCopy: convetArrayToString(local),
-        length:lengthTree,
         comment: TextComment
     })
     // graphic
@@ -25,9 +22,7 @@ function heapify(valueInputSort, N, i){
 
         showTree.push({
             status: convetArrayToString(arrayStatus),
-            value: convetArrayToString(arrayValue),
             localCopy: convetArrayToString(local),
-            length:lengthTree,
             comment: TextComment
         })
         // graphic
@@ -46,9 +41,7 @@ function heapify(valueInputSort, N, i){
 
         showTree.push({
             status: convetArrayToString(arrayStatus),
-            value: convetArrayToString(arrayValue),
             localCopy: convetArrayToString(local),
-            length:lengthTree,
             comment: TextComment
         })
         // graphic
@@ -67,12 +60,9 @@ function heapify(valueInputSort, N, i){
         arrayStatus[i]=1;
         arrayStatus[left] = 0
         arrayStatus[right] = 0
-        arrayValue = copyArray(valueInputSort)
         showTree.push({
             status: convetArrayToString(arrayStatus),
-            value: convetArrayToString(arrayValue),
             localCopy: convetArrayToString(local),
-            length:lengthTree,
             comment: TextComment
         })
         // graphic
@@ -97,12 +87,9 @@ function buildHeap(){
     
     TextComment = "Vun đống Thành Công, Đỉnh Đống = "+ valueInputSort[0]
     // graphic
-    arrayValue = copyArray(valueInputSort)
     arrayStatus = copyArray(statusTrees)
     showTree.push({
         status: convetArrayToString(arrayStatus),
-        value: convetArrayToString(arrayValue),
-        length: lengthTree,
         comment: TextComment,
         localCopy: convetArrayToString(local),
     })
@@ -123,6 +110,17 @@ function heapSort(){
     
     for(let i = valueInputSort.length - 1; i >= 0; i--)    {
         TextComment = "Đổi Chỗ "+valueInputSort[0]+" và "+ valueInputSort[i]+". Đỉnh Đống xuống cuối đống"
+
+        statusTrees[lengthTree-1]='1'
+        statusTrees[0]='1'
+
+        showTree.push({
+            status: convetArrayToString(statusTrees),
+            localCopy: convetArrayToString(local),
+            comment: TextComment
+        })
+        statusTrees[0]='0'
+
         let t = valueInputSort[0];
         valueInputSort[0] = valueInputSort[i];
         valueInputSort[i] = t;  
@@ -131,18 +129,10 @@ function heapSort(){
         var lt = local[0];
         local[0] = local[i];
         local[i] = lt;
-
-
-        statusTrees[lengthTree-1]='3'
-        statusTrees[0]='1'
-        arrayValue = copyArray(valueInputSort)
-        arrayStatus = copyArray(statusTrees)
         
         showTree.push({
-            status: convetArrayToString(arrayStatus),
-            value: convetArrayToString(arrayValue),
+            status: convetArrayToString(statusTrees),
             localCopy: convetArrayToString(local),
-            length: lengthTree,
             comment: TextComment
         })
 
@@ -167,8 +157,6 @@ function heapSort(){
     showTree.pop()
     showTree.push({
         status: convetArrayToString(statusTrees),
-        value: convetArrayToString(arrayValue),
-        length: lengthTree,
         localCopy: convetArrayToString(local),
         comment: "Xắp Xếp Thành Công"
     })

@@ -39,7 +39,7 @@ function createArrow(){
         var to = "#hinderItem"+(i)+""
         arrow.setAttribute("from",from);
         arrow.setAttribute("to",to);
-        arrow.setAttribute("color","red");
+        arrow.setAttribute("color","black");
         arrow.setAttribute("tail","true");
         // fromX="0" fromY="1" toX="0" toY="0.75"
         if (i<7){
@@ -83,13 +83,13 @@ function updateTreeNode(status, type){
         var idShow = "showItem"+type[i]+""
         var a = document.getElementById(idShow)
         if (status[i]==='1'){
-            a.style.backgroundColor = "red"
+            a.style.backgroundColor = "#ff4d4d"
         }else if(status[i]==='2'){
-            a.style.backgroundColor = "green"
+            a.style.backgroundColor = "#00e68a"
         }else if(status[i]==='3'){
             a.style.backgroundColor = "yellow"
         }else{
-            a.style.backgroundColor = "aqua"
+            a.style.backgroundColor = "#33ccff"
         }
         a.style.top = pointTrees[parseInt(i)].top + "px"
         a.style.left = pointTrees[parseInt(i)].left + "px"
