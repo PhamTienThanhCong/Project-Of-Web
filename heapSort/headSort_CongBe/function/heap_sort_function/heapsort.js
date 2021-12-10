@@ -144,10 +144,10 @@ function heapSort(){
         // graphic   
         statusTrees[i]='3' 
         lengthTree--; 
-        TextComment = "Vun lại đống, sau khi Đổi Đỉnh"
+        TextComment = "Vun lại đống."
         heapify(valueInputSort, i, 0);
         commentShow.push({
-            comment: "Vun lại đống, và giá trị đống mới là: "+valueInputSort[0],
+            comment: "Vun đống hoàn thành, và giá trị đống mới là: "+valueInputSort[0],
             array: convetArrayToString(valueInputSort),
             status: convetArrayToString(statusTrees),
         })

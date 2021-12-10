@@ -50,28 +50,42 @@
 
   <!-- Chương trình minh họa -->
   <div id="mainShow">
+    <div class="all-notes">
+      <div class="note">
+        <div class="note-img"></div>
+        <div class="note-content"> Giá trị các node cần xắp xếp</div>
+      </div>
+      <div class="note">
+        <div class="note-img" style="background-color: rgb(0, 230, 138);"></div>
+        <div class="note-content">Giá trị node cha</div>
+      </div>
+      <div class="note">
+        <div class="note-img" style="background-color: rgb(255, 77, 77)"></div>
+        <div class="note-content"> Giá trị node con thay thế node cha</div>
+      </div>
+      <div class="note">
+        <div class="note-img" style="background-color: yellow;"></div>
+        <div class="note-content"> Giá trị đã được xắp xếp</div>
+      </div>
+    </div>
     <div id="mainShowValue"></div>
   </div>
   <!-- Chương trình minh họa -->
 
   <!-- tăng giảm nhanh châm của chương trình -->
-  <div class="input-range-center">
-    <input type="range" id="range" name="volume" min="0" max="1000">
-  </div>
 
   <div class="botton-player-center">
-    <div class="input-range-center">
-      <label for="volume" class="mobie-responsive-2 lable-range-faster">- Tốc Độ </label>
+    <button onclick=stopShow() id="stop-start-range">
+      <svg width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: msFilter"><path id = "icon" d="M7 7h10v10H7z"></path></svg>
+    </button>
+
+    <input type="range" id="range" name="volume" min="0" max="1000">
+
+    <div class="input-range">
+      <svg class="timer-range" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: msFilter"><path d="M12.25 2c-5.514 0-10 4.486-10 10s4.486 10 10 10 10-4.486 10-10-4.486-10-10-10zM18 13h-6.75V6h2v5H18v2z"></path></svg>
       <input type="range" id="range-faster" name="volume" min="100" max="1800">
     </div>
-  </div>
 
-  <div class="input-range-center">
-    <div class="button-center">
-      <button onclick=stopShow() id="stop-start-range">
-        <img id="button-image" src="public/images/stop-button.png" width="100%" height="100%" />
-      </button>
-    </div>
   </div>
   <!-- tăng giảm nhanh châm của chương trình -->
 

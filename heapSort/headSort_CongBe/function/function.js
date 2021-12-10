@@ -18,7 +18,7 @@ function convetArrayToString(a){
 }
 
 function runShow(){
-    document.getElementById("button-image").src = "public/images/play-buttton.png"
+    document.getElementById("icon").setAttribute("d","M8 7h3v10H8zm5 0h3v10h-3z")
     run = setInterval(function(){
         doRun=true
         rangeInput.value = i_Loop
@@ -37,7 +37,7 @@ function runShow(){
 function stopShow(){
     if (showTree.length){
         if (doRun){
-            document.getElementById("button-image").src ="public/images/play.png"
+            document.getElementById("icon").setAttribute("d","M7 6v12l10-6z")
             clearInterval(run)
             doRun=false
         } 
@@ -135,5 +135,5 @@ function resetAll(){
     valueInputSort=[]
     inputValue.value=""
     ctx.clearRect(0, 0, widthScreen, 500);
-    document.getElementById("button-image").src ="public/images/stop-button.png"
+    document.getElementById("icon").setAttribute("d","M7 7h10v10H7z")
 }
