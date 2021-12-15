@@ -136,7 +136,7 @@ function showChillCommentToDesktop(i){
         var nodechills = document.createElement('div');
         nodechills.className = "nodes"
         if (aStatusChill[i] === '3'){
-            nodechills.style.backgroundColor = "#ffff00";
+            nodechills.style.backgroundColor = "#ffff80";
         }
         nodechills.innerHTML = aChills[i]
         document.getElementById(idnode).appendChild(nodechills)

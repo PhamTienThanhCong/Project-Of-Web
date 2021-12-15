@@ -75,6 +75,7 @@ rangeInput.onchange = function(){
 function xapXep(){
     getValueFromInput()
     if(valueInputSort.length){
+        document.getElementById('program').innerHTML = "Chương trình Heapsort: Xắp xếp tăng dần"
         resetValue()
         heapSort()
         showCommentToDesktop()
@@ -85,6 +86,7 @@ function xapXep(){
 function xapXepDown(){
     getValueFromInput()
     if(valueInputSort.length){
+        document.getElementById('program').innerHTML = "Chương trình Heapsort: Xắp xếp giảm dần"
         resetValue()
         heapSortDown()
         showCommentToDesktop()
@@ -95,6 +97,7 @@ function xapXepDown(){
 function vunDongTang(){
     getValueFromInput()
     if(valueInputSort.length){
+        document.getElementById('program').innerHTML = "Chương trình Heapsort: Vun đống cho xắp xếp tăng"
         resetValue()
         buildHeap()
         showCommentToDesktop()
@@ -105,6 +108,7 @@ function vunDongTang(){
 function vunDongGiam(){
     getValueFromInput()
     if(valueInputSort.length){
+        document.getElementById('program').innerHTML = "Chương trình Heapsort: Vun đống cho xắp xếp giảm"
         resetValue()
         buildHeapDown()
         showCommentToDesktop()

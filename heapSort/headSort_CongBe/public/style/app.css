@@ -6,7 +6,7 @@
 
 #header{
     margin: 0;
-    background-color: #404040;
+    background-color: #dadada;
     height: 50px;
     width: 100%;
     float: left;
@@ -17,7 +17,7 @@
     text-align: center;
     margin-top: 10px;
     font-size: 28px;
-    color: white;
+    color: black;
 }
 
 .main-function-1,.main-function-2{
@@ -63,6 +63,7 @@
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  transition: all 0.5s;
 }
 
 .button-39:hover {
@@ -83,12 +84,14 @@
     /* border: 1px solid black; */
     width: 762px;
     height: 40px;
-    border-radius: 15px;
+    border-radius: 10px;
     border: 2px solid #999999;
     padding: 10px;
     /* padding-left: 20px; */
     font-size: 20px;
     font-family: 'Times New Roman', Times, serif;
+    background-color: transparent;
+    outline: none;
 }
 
 .lableInputValue{
@@ -103,21 +106,24 @@
 }
 
 .reset{
-    background-color: #ff8080;
+    background-color: transparent;
+    border: 2px solid #ff1a1a;
 }
 .reset:hover{
     background-color: #ff1a1a;
 }
 
 .botton-heapsort{
-    background-color: #33ccff;
+    background-color: transparent;
+    border: 2px solid #00ace6;
 }
 .botton-heapsort:hover{
     background-color: #00ace6;
 }
 
 .botton-create{
-    background-color: #33ff77;
+    background-color: transparent;
+    border: 2px solid #00e64d;
 }
 .botton-create:hover{
     background-color: #00e64d;
@@ -222,7 +228,7 @@ h2{
 #mainShowValue{
     width: 1200px;
     height: 500px;
-    background-color:#ccc;
+    background-color: #f5f5f0;
     top: 0;
     left: 0;
 }
@@ -332,5 +338,11 @@ h2{
 .note-content{
     margin-left: 10px;
     display: inline-block;
+    font-size: 20px;
+}
+#program{
+    position: absolute;
+    top: 10px;
+    left: 10px;
     font-size: 20px;
 }
