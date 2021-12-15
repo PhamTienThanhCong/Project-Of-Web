@@ -13,9 +13,9 @@ header {
     font-size: 30px;
 }
 
-body {
-    /* background-color: #99ccff */
-}
+/* body {
+    background-color: #99ccff
+} */
 
 /* Tương tác người dùng */
 .tuong-tac{
@@ -52,6 +52,7 @@ body {
     margin-right: 5px;
     border-radius: 5px;
     border: none;
+    cursor: pointer;
 }
 
 .button{
@@ -86,7 +87,7 @@ button:hover{
     bottom: 0px;
     background-color: #1a8cff;
     width: 5%;
-    height: 100px;
+    height: 350px;
     display: flex;
     justify-content: center;
     padding-top: 10px;
