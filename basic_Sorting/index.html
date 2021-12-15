@@ -4,9 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>he</title>
+    <title>basic sorting</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <!-- Phần đầu trang -->
+    <header>
+        <p>Giải thuật sắp xếp cơ bản</p>
+    </header>
+    <!-- Phần đầu trang -->
+
+    <!-- Phần chức năng -->
+    <div class="tuong-tac">
+        <div class="dau-vao">
+            <label for="input">Đầu vào: </label>
+            <input type="text" id="input" placeholder="nhập mảng với các số cách nhau bởi dấu cach">
+            <button id="btn-next">next</button>
+            <button id="btn-ramdom">ramdom</button>
+        </div>
+        <div class="button">
+            <button id="insert-sort">insert sort</button>
+            <button id="select-sort">select sort</button>
+            <button id="bubble-sort">bubble sort</button>
+        </div>
+    </div>
+    <!-- Phần chức năng -->
+
+    <!-- Phần chương trình hoạt động -->
+    <div id="main">
+        <div id="main-hidden"></div>
+        <div id="main-show">
+        </div>
+    </div>
+    <!-- Phần chương trình hoạt động -->
 </body>
+<script type="text/javascript" src="./function/XuLyDauVao.js"></script>
+<script type="text/javascript" src = "./function/DoHoa.js"></script>
 </html>
