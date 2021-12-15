@@ -6,23 +6,22 @@
 }
 
 header {
-    background-color: #0066cc;
-    color: white;
+    background-color: #ccccff;
+    color: black;
     text-align: center;
     padding: 10px;
     font-size: 30px;
 }
 
-/* body {
-    background-color: #99ccff
-} */
+body {
+    background-color: white;
+}
 
 /* Tương tác người dùng */
 .tuong-tac{
     padding-top: 20px;
     padding-bottom: 20px;
     width: 100%;
-    background-color: #99ccff
 }
 
 .dau-vao,.button{
@@ -32,6 +31,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+    color: black;
 }
 
 #input{
@@ -43,6 +43,8 @@ header {
     font-size: 15px;
     outline: 0;
     margin: 0px 10px;
+    background-color: transparent;
+    color: black;
 }
 
 #btn-next, #btn-ramdom,#insert-sort, #select-sort, #bubble-sort{
@@ -69,12 +71,13 @@ button:hover{
 #main{
     width: 1000px;
     height: 400px;
-    background-color: #ccc;
+    background-color: #ebebe0;
     margin: auto;
-    margin-bottom: 60px;
+    margin-bottom: 10px;
     position: relative;
+    border-radius: 15px;
 }
-#main-show,#main-hidden{
+#main-show {
     position: absolute;
     top: 0;
     left: 0;
@@ -84,8 +87,8 @@ button:hover{
 
 .tree{
     position: absolute;
-    bottom: 0px;
-    background-color: #1a8cff;
+    bottom: 30px;
+    background-color: #0066ff;
     width: 5%;
     height: 350px;
     display: flex;
@@ -93,6 +96,19 @@ button:hover{
     padding-top: 10px;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
+    color: white;
 }
+
+.index{
+    position:absolute;
+    bottom:0px;
+    color: black;
+    width: 5%;
+    display: flex;
+    font-size: 18px;
+    justify-content: center;
+}
+
+
 
 /* Chương trình hoạt động */

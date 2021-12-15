@@ -22,22 +22,24 @@
             <button id="btn-next" onclick="getValueFromInput()">next</button>
             <button id="btn-ramdom" onclick="ramdomValue()">ramdom</button>
         </div>
-        <div class="button">
-            <button id="insert-sort">insert sort</button>
-            <button id="select-sort">select sort</button>
-            <button id="bubble-sort">bubble sort</button>
-        </div>
     </div>
     <!-- Phần chức năng -->
 
     <!-- Phần chương trình hoạt động -->
     <div id="main">
-        <div id="main-hidden"></div>
         <div id="main-show">
         </div>
+    </div>
+    <div class="button">
+        <button id="insert-sort" onclick="insertSortRun()">insertion sort</button>
+        <button id="select-sort" onclick="selectionSortRun()">selection sort</button>
+        <button id="bubble-sort" onclick="bubbleSortRun()">bubble sort</button>
+        <button id="bubble-sort" onclick="resetSortRun()">reset sort</button>
     </div>
     <!-- Phần chương trình hoạt động -->
 </body>
 <script type="text/javascript" src="./function/XuLyDauVao.js"></script>
 <script type="text/javascript" src = "./function/DoHoa.js"></script>
+<script type="text/javascript" src = "./function/algorithm/basicSorting.js"></script>
+<script type="text/javascript" src="./function/mainFunction.js"></script>
 </html>
