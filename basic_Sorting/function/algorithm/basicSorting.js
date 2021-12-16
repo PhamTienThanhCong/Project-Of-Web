@@ -163,4 +163,11 @@ function bubbleSort(){
         }
       statusArray[arrayValue.length - i - 1] = '3';
     };
+    for(let i = 0; i < arrayValue.length; i++){
+      statusArray[i] = '3';
+    }
+    sortingRun.push({
+      local: convetArrayToString(index),
+      statusIndex: convetArrayToString(statusArray)
+  }) 
 };
