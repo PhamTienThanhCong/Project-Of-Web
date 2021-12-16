@@ -2,8 +2,8 @@ var sizeWidth = window.innerWidth - 200;
 var sizeHeight = window.innerHeight - 150;
 const test = document.getElementById("no");
 const yes = document.getElementById("yes");
-var x = window.innerHeight/2;
-var y = window.innerWidth/2;
+var y = window.innerHeight/2;
+var x = window.innerWidth/2;
 
 window.addEventListener('resize', function(){
     sizeWidth = window.innerWidth - 200;
@@ -36,6 +36,7 @@ setInterval(function(){
     }
     yes.style.top = y+"px";
     yes.style.left = x+"px";
+    console.log(x,y);
 },2000);
 
 function click(){
