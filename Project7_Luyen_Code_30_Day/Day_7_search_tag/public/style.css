@@ -39,6 +39,7 @@ body{
     font-size: 24px;
     margin-left: 10px;
     transform: translateY(6px);
+    cursor: pointer;
 }
 
 .conten-search li{
@@ -48,22 +49,22 @@ body{
     padding-right: 5px;
     background-color: #8cc84c;
     color: white;
-    font-size: 18px;
+    font-size: 20px;
     margin-right: 5px;
     margin-top: 5px;
     border-radius: 5px;
 }
 
-.search-input{
+#search-input{
     flex: 1;
     border: none;
     outline: none;
     font-size: 20px;
-    margin: 10px 0;
+    margin: 13px 0;
 }
 
-.btn-remove{
-    background-color: #8cc84c;
+.btn-remove,.btn-search{
+    background-color: #ff6666;
     border: none;
     outline: none;
     margin-top: 20px;
@@ -74,6 +75,16 @@ body{
     transition: all 0.5s ease-in-out;
     color: white;
 }
-.btn-remove:hover{
+
+.btn-search{
+    float: right;
     background-color:#00cc44;
+}
+
+.btn-remove:hover{
+    background-color:red;
+}
+
+.btn-search:hover{
+    background-color: #009933;
 }

@@ -12,22 +12,12 @@
 <body>
     <div class="main-search">
         <h2 class="title">Search Tags</h2>
-        <div class="conten-search">
-                <li>
-                    html
-                    <i class='bx bx-x'></i>
-                </li>
-                <li>
-                    css
-                    <i class='bx bx-x'></i>
-                </li>    
-                <li>
-                    css
-                    <i class='bx bx-x'></i>
-                </li>    
-            <input class="search-input" type="text" placeholder="Type and Enter">
+        <div class="conten-search"> 
+            <input id="search-input" type="text" placeholder="Type and Enter">
         </div>
-        <button class="btn-remove">Remove all</button>
+        <button class="btn-remove" onclick="removeAll()">Remove all</button>
+        <button class="btn-search" onclick="search()">search <i class='bx bx-search'></i> </button>
     </div>
 </body>
+<script type="text/javascript" src="./app.js"></script>
 </html>
