@@ -36,7 +36,6 @@ setInterval(function(){
     }
     yes.style.top = y+"px";
     yes.style.left = x+"px";
-    console.log(x,y);
 },2000);
 
 function click(){
