@@ -8,7 +8,7 @@ function getValueFromInput(inputValue) {
     var b = a.split(' ');
     for (var i=0; i <b.length; i++) {
         if (b[i] !== ""){
-            arrayValue[i]=parseInt(b[i]);    
+            arrayValue[i]=parseFloat(b[i]);    
         }       
     }
     return arrayValue;
