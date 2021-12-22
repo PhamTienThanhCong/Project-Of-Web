@@ -1,6 +1,6 @@
 # Heapsort algorithm simulation web project
 
-Access link: https://phamtienthanhcong.github.io/Project-Of-Web/heapSort/index.html
+Access link: https://phamtienthanhcong.github.io/Project-Of-Web/Project5_HeapSort/index.html
 
 ### Construction method
 
