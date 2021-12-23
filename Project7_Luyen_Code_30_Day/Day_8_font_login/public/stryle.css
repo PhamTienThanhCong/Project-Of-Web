@@ -1,0 +1,75 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: linear-gradient(120deg, #3ca7ee, #9b408f);
+    width: 100%;
+    height: 100vh;
+}
+
+.font{
+    width: 400px !important;
+    border-radius: 15px !important;
+    background-color: white;
+    margin: auto;
+    margin-top: 30px;
+    padding: 20px 40px;
+}
+.font h1{
+    margin-bottom: 40px;
+}
+
+.font .font-input{
+    border: none;
+    width: 100%;
+    outline: none;
+    border-bottom: 2.5px solid #ccc;
+    height: 40px;
+    font-size: 18px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.font span{
+    width: 0;
+    height: 2.5px;
+    transform: translateY(-3px);
+    transition: all 0.3s ease-in-out;
+    left: 0;
+    display: block;
+}
+
+.font .font-container .font-name{
+    transform: translateY(-50px);
+    font-size: 18px;
+    pointer-events: none;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgba(0,0,0,0.6);
+    transition: all 0.3s ease-in-out;
+}
+
+.font-container{
+    margin-top: 10px;
+    width: 100%;
+    height: 100.5px;
+}
+
+.font .font-input:focus ~ .font-name{
+    transform: translateY(-80px);
+    font-size: 14px;
+}
+
+.font .font-input:focus ~ span{
+    width: 100%;
+}
+
+.normal{
+    background-color:#2691d9;
+}
+
+.error{
+    width: 100%;
+    background-color: #ff3333;
+}
