@@ -43,8 +43,8 @@ function HeSoTuongQuan(){
     abTB = abTB/a.length;
 
 
-    var S2a = (a.length/(a.length-1))*(aTB1 - aTB*aTB);
-    var S2b = (b.length/(b.length-1))*(bTB1 - bTB*bTB);
+    var S2a = (1/(a.length-1))*(aTB1 - aTB*aTB);
+    var S2b = (1/(b.length-1))*(bTB1 - bTB*bTB);
     var Sab = (a.length/(a.length-1))*(abTB - aTB*bTB)
 
     createValue('- Giá trị X ngang = ',Math.round(aTB * 1000) / 1000);
