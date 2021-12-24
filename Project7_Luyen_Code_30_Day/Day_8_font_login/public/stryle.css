@@ -9,14 +9,17 @@ body{
     width: 100%;
     height: 100vh;
     font-family: Arial, Helvetica, sans-serif;
+    display:flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .font{
     width: 400px !important;
     border-radius: 15px !important;
     background-color: white;
-    margin: auto;
-    margin-top: 20px;
+    /* margin: auto;
+    margin-top: 20px; */
     padding: 20px 40px;
 }
 .font h1{
@@ -57,6 +60,16 @@ body{
     transition: all 0.3s ease-in-out;
 }
 
+.font .font-container i{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #a6a6a6;
+}
+
 .check{
     transform: translateY(-32px);
     font-size: 18px;
@@ -76,6 +89,8 @@ body{
     width: 100%;
 }
 
+
+
 .done{
     background-color:#2691d9;
     width: 100%;
@@ -91,7 +106,7 @@ body{
     background-color: #ff3333;
 }
 
-#font-register{
+.font-button{
     background-color: #2691d9;
     width: 100%;
     padding: 15px 0;
@@ -105,7 +120,7 @@ body{
     cursor: pointer;
 }
 
-#font-register:hover{
+.font-button:hover{
     background-color: #08609a;
 }
 
@@ -122,4 +137,8 @@ body{
 
 .font-login a:hover{
     text-decoration: underline;
+}
+
+.hidden{
+    display: none;
 }

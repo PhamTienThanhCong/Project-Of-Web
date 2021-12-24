@@ -2,12 +2,22 @@ const Username = document.getElementById('name');
 const Email = document.getElementById('email');
 const Password = document.getElementById('password');
 const ConfirmPassword = document.getElementById('confirm-password');
+const fontType = document.getElementsByClassName('font')
+const userlogin = document.getElementById('name-email')
+const passwordLogin = document.getElementById('password-login')
 
 var valueCheck = [];
 valueCheck.push(Username);
 valueCheck.push(Email);
 valueCheck.push(Password);
 valueCheck.push(ConfirmPassword);
+valueCheck.push(userlogin);
+valueCheck.push(passwordLogin);
+
+var checkHint = [];
+checkHint.push(Password);
+checkHint.push(ConfirmPassword);
+checkHint.push(passwordLogin);
 
 var checkTextInput = [];
 
@@ -110,7 +120,6 @@ function checkName(){
     for (var i = 0; i< valueCheck.length; i++) {
         valueCheck[i].addEventListener('blur', function(){
             clearInterval(checkTextInput[0])
-            console.log('checknull')
             if (this.value !== ""){
                 this.nextElementSibling.nextElementSibling.nextElementSibling.classList.add('have-value')
                 this.nextElementSibling.nextElementSibling.nextElementSibling.classList.remove('check')
@@ -130,3 +139,30 @@ function checkName(){
 }
 
 checkName()
+
+const hidden = ()=>{
+    fontType[0].classList.toggle('hidden')
+    fontType[1].classList.toggle('hidden')
+}
+
+const checkChange = document.getElementsByClassName('btn-change')
+
+checkChange[0].addEventListener('click',hidden)
+checkChange[1].addEventListener('click',hidden)
+
+
+function checkHidePassword(){
+    for(let i=0; i < checkHint.length ; i++){
+        checkHint[i].nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.addEventListener('click',function(){
+            this.classList.toggle('bx-show')
+            this.classList.toggle('bx-hide')
+            if (this.parentNode.firstElementChild.getAttribute('type') === 'password'){
+                this.parentNode.firstElementChild.setAttribute('type','text')
+            }else{
+                this.parentNode.firstElementChild.setAttribute('type','password')
+            } 
+        })
+    }
+}
+
+checkHidePassword()
