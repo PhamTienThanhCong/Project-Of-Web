@@ -1379,6 +1379,10 @@ for (let i = 0; i < a.length; i++){
         show.push(c[c.length-1]);
     }
 }
+show.pop()
+show.pop()
+
+show.reverse()
 
 var showFrom = 0;
 var showTo = 10;
