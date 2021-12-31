@@ -92,4 +92,3 @@ function TinhToan(){
     <button onclick="reset()">Reset </button>
     `
 }
-
