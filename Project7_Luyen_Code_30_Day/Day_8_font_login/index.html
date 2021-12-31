@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>font register</title>
+    <link rel="stylesheet" href="./public/stryle.css">
+    <link rel="shortcut icon" href="./public/image/logoWeb.png" type="image/x-icon">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <form class="font">
+        <h1 style="font-weight: 700; width: 100%; text-align: center">Đăng kí</h1>
+        <div class=font-container>
+            <input class="font-input" type="text" id="name">
+            <span class="normal"></span>
+            <small></small>
+            <div class="font-name check">User name</div>
+        </div>
+
+        <div class=font-container>
+            <input class="font-input" type="text" id="email">
+            <span class="normal"></span>
+            <small></small>
+            <div class="font-name check">Email</div>
+        </div>
+
+        <div class=font-container>
+            <input class="font-input" type="password" id="password">
+            <span class="normal"></span>
+            <small></small>
+            <div class="font-name check">Password</div>
+            <i class='bx bx-show'></i>
+            <!-- <i class='bx bx-hide'></i> -->
+        </div>
+
+        <div class=font-container>
+            <input class="font-input" type="password" id="confirm-password">
+            <span class="normal"></span>
+            <small></small>
+            <div class="font-name check">confirm password</div>
+            <i class='bx bx-show'></i>
+        </div>
+
+        <button class="font-button" id="font-register">Register</button>
+
+        <div class="font-login">
+            Bạn đã có tài khoản? 
+            <a href="#" class='btn-change'>Đăng nhập</a>
+        </div>
+
+    </form>
+
+    <form class="font hidden">
+        <h1 style="font-weight: 700; width: 100%; text-align: center">Đăng Nhập</h1>
+        <div class=font-container>
+            <input class="font-input" type="text" id="name-email">
+            <span class="normal"></span>
+            <small></small>
+            <div class="font-name check">User name hoặc email</div>
+        </div>
+
+        <div class=font-container>
+            <input class="font-input" type="password" id="password-login">
+            <span class="normal"></span>
+            <small></small>
+            <div class="font-name check">Password</div>
+            <i class='bx bx-show'></i>
+        </div>
+
+        <button class="font-button">login</button>
+
+        <div class="font-login">
+            Bạn chưa có tài khoản? 
+            <a class='btn-change' href="#">Đăng kí</a>
+        </div>
+    </form>
+</body>
+<script src="./function.js"></script>
+</html>
