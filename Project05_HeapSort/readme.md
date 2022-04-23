@@ -2,6 +2,10 @@
 
 Access link: https://phamtienthanhcong.github.io/Project-Of-Web/Project5_HeapSort/index.html
 
+### infor
+
+- name: Phạm Tiến Thành Công
+
 ### Construction method
 
 It will include 3 main steps:
